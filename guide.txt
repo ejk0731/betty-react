@@ -11,3 +11,36 @@ npx create-next-app@lates
     https://velog.io/@woong3e/node-version-%EC%97%85%EB%8D%B0%EC%9D%B4%ED%8A%B8%ED%95%98%EA%B8%B0
 
 npm run dev (dev server)
+
+Route
+  Routing only works inside of app folder
+  add folder in app folder (folder name will be shown in url)
+  add page.tsx in that folder. It will be the content of the page.
+  if you don't make make page.tsx inside the folder, it won't render the page and show 404 error.
+
+app
+  layout - root
+  page - children
+
+icon.png inside of app folder automatically shows on favicon
+
+components
+  same as Vanilla React
+  components folder can be anywhere!
+  ** ref https://nextjs.org/docs/app/building-your-application/routing/colocation 
+  If it is made in root directory, you can use "@" instead of "../"
+
+Reserved Filenames
+  Important: These filenames are only reserved when creating them inside of the app/ folder (or any subfolder). 
+  Outside of the app/ folder, these filenames are not treated in any special way.
+  
+  list of reserved filenames in NextJS 
+    page.js => Create a new page (e.g., app/about/page.js creates a <your-domain>/about page)
+    layout.js => Create a new layout that wraps sibling and nested pages
+    not-found.js => Fallback page for "Not Found" errors (thrown by sibling or nested pages or layouts)
+    error.js => Fallback page for other errors (thrown by sibling pages or nested pages or layouts)
+    loading.js => Fallback page which is shown whilst sibling or nested pages (or layouts) are fetching data
+    route.js => Allows you to create an API route (i.e., a page which does NOT return JSX code but instead data, e.g., in the JSON format)
+    
+  You also find a list with all supported filenames & detailed explanations 
+  in the official docs: https://nextjs.org/docs/app/api-reference/file-conventions

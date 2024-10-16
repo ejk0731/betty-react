@@ -1,13 +1,12 @@
-import Image from "next/image";
 import Link from "next/link";
+import Header from "@/components/header";
 
 console.log("happy coding");
 export default function Home() {
   return (
     <div>
       <main>
-        <Image src="/logo.png" alt="A server surrounded by magic sparkles." width={180} height={38} priority />
-        <h1>Welcome to this NextJS Course!</h1>
+        <Header />
         <p>🔥 Let&apos;s get started! 🔥</p>
         <p>
           {/* anchor tag - does not in a single page */}
