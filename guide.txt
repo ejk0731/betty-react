@@ -44,3 +44,7 @@ Reserved Filenames
     
   You also find a list with all supported filenames & detailed explanations 
   in the official docs: https://nextjs.org/docs/app/api-reference/file-conventions
+
+Dynamic Routes
+  https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes
+  
