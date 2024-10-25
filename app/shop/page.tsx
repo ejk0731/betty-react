@@ -1,9 +1,11 @@
 import Link from "next/link";
-
+import styles from "./shop.module.scss";
+// const cx = 
 export default function Shop() {
   return (
     <>
       <h1>Shop</h1>
+      <div className={styles.wrap}></div>
       <p>
         <Link href="/shop/top">Top</Link>
       </p>

@@ -48,3 +48,12 @@ Reserved Filenames
 Dynamic Routes
   https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes
   
+Sass
+  ref: https://velog.io/@heumheum2/Nextjs-%EC%97%90%EC%84%9C-scss-%EC%84%A4%EC%A0%95
+    npm install -D sass
+    auto complete => npm install -D typescript-plugin-css-modules
+
+  https://velog.io/@rubi0624/ESLint-Prettier-Stylelint-%EC%84%A4%EC%A0%95
+  
+  Postcss
+    https://h-owo-ld.tistory.com/m/184
