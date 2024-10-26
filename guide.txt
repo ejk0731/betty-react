@@ -49,6 +49,9 @@ Dynamic Routes
   https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes
   
 Sass
+  module is built-in in NextJS
+  https://nextjs.org/docs/app/building-your-application/styling/sass
+
   ref: https://velog.io/@heumheum2/Nextjs-%EC%97%90%EC%84%9C-scss-%EC%84%A4%EC%A0%95
     npm install -D sass
     auto complete => npm install -D typescript-plugin-css-modules
