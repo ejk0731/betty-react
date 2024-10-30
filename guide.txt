@@ -60,3 +60,18 @@ Sass
   
   Postcss
     https://h-owo-ld.tistory.com/m/184
+
+Global css  
+  If you want to apply global css at layout.tsx,
+  global.css(or scss) file needs to be in app folder
+
+Google font
+  import { Oswald } from 'next/font/google';
+  const oswald = Oswald({ subsets: ['latin'] });
+  .
+  .
+  <html className={`${oswald.className}`}>
+    <body>{children}</body>
+  </html>
+
+  *** button tag needs to must have "font-family: inherit;" attribute
