@@ -1,76 +1,65 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import styles from './Header.module.scss';
 
 export default function Header() {
   return (
-    <header className="header">
-      <Link href={'/'}>
-        <div className={styles.logo}>
-          <a href="./index.html">Betty</a>
-        </div>
-        <nav>
-          <ul>
-            <li>
-              SHOP
-              <ul className="gnb_inner">
-                <li>
-                  <a href="product.html?cate=new">New Arrivals</a>
-                </li>
-                <li>
-                  <a href="product.html?cate=outer">Outerwear</a>
-                </li>
-                <li>
-                  <a href="product.html?cate=top">Top</a>
-                </li>
-                <li>
-                  <a href="product.html?cate=bottom">Bottom</a>
-                </li>
-                <li>
-                  <a href="product.html?cate=dress">Dress</a>
-                </li>
-                <li>
-                  <a href="product.html?cate=acc">Accessories</a>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <a href="product.html?cate=outer">COLLECTION</a>
-            </li>
-            <li>
-              <a href="product.html?cate=top">ABOUT</a>
-            </li>
-            <li>
-              <a href="product.html?cate=bottom">COMMUNITY</a>
-            </li>
-            <li>
-              <a href="product.html?cate=dress">MY ACCOUNT</a>
-            </li>
-            <li className="submenu">
-              <ul>
-                <li>
-                  <a href="#">LOGIN</a>
-                </li>
-                <li>
-                  <a href="#">SEARCH</a>
-                </li>
-                <li>
-                  <a href="#">
-                    CART(<span>0</span>)
-                  </a>
-                </li>
-              </ul>
-            </li>
-            {/* 햄버거 버튼 max-width: 1120px */}
-            <li className="ham_box">
-              <a href="#">
-                <img src="./img/icon_shoppingbag.png" alt="icon_shoppingbag" />
-              </a>
-              <img className="ham_btn" src="./img/ham.png" alt="ham" />
-            </li>
-          </ul>
-        </nav>
+    <header className={styles.header}>
+      <Link href={'/'} className={styles.logo}>
+        <h1>Betty</h1>
       </Link>
+      <nav>
+        <ul className={styles.main_nav}>
+          <li className={styles.main_nav_item}>
+            <button type="button">SHOP</button>
+
+            <ul className={styles.sub_nav} style={{ display: 'none' }}>
+              <li className={styles.sub_nav_item}>
+                <button type="button">New Arrivals</button>
+              </li>
+              <li className={styles.sub_nav_item}>
+                <button type="button">Outerwear</button>
+              </li>
+              <li className={styles.sub_nav_item}>
+                <button type="button">Top</button>
+              </li>
+              <li className={styles.sub_nav_item}>
+                <button type="button">Bottom</button>
+              </li>
+              <li className={styles.sub_nav_item}>
+                <button type="button">Dress</button>
+              </li>
+              <li className={styles.sub_nav_item}>
+                <button type="button">Accessories</button>
+              </li>
+            </ul>
+          </li>
+          <li className={styles.main_nav_item}>
+            <button type="button">COLLECTION</button>
+          </li>
+          <li className={styles.main_nav_item}>
+            <button type="button">ABOUT</button>
+          </li>
+          <li className={styles.main_nav_item}>
+            <button type="button">COMMUNITY</button>
+          </li>
+          <li className={styles.main_nav_item}>
+            <button type="button">MY ACCOUNT</button>
+          </li>
+        </ul>
+      </nav>
+      <ul className={styles.sub_nav}>
+        <li className={styles.sub_nav_item}>
+          <button type="button">LOGIN</button>
+        </li>
+        <li className={styles.sub_nav_item}>
+          <button type="button">SEARCH</button>
+        </li>
+        <li className={styles.sub_nav_item}>
+          <button type="button">
+            CART(<span>0</span>)
+          </button>
+        </li>
+      </ul>
     </header>
   );
 }
