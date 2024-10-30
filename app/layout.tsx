@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
+import { Oswald } from 'next/font/google';
 import './styles/globals.scss';
+
+const oswald = Oswald({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -12,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html className={`${oswald.className}`}>
       <body>{children}</body>
     </html>
   );
