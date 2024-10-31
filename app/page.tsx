@@ -1,12 +1,27 @@
 import Header from '@/components/common/Header';
-
-console.log('happy coding');
+import styles from './Home.module.scss';
+import Link from 'next/link';
+import Image from 'next/image';
+import imageMainBanner from '@/images/main_banner.jpg';
 
 export default function Home() {
   return (
     <div>
-      <main>
-        <Header />
+      <Header />
+      <main className={styles.main}>
+        <div className={styles.main_banner_wrap}>
+          <Link href={'/'}>
+            <div className={styles.main_banner}>
+              <Image
+                src={imageMainBanner}
+                height={770}
+                alt=""
+                priority
+                quality={70}
+              />
+            </div>
+          </Link>
+        </div>
       </main>
     </div>
   );

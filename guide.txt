@@ -75,3 +75,18 @@ Google font
   </html>
 
   *** button tag needs to must have "font-family: inherit;" attribute
+
+Image
+  import imageMainBanner from '@/images/main_banner.jpg';
+    
+  - img tag
+    <img src={imageMainBanner.src} alt="" width={100} height={770} />
+
+  - Image from next/image
+    <Image src={imageMainBanner} alt="" width={100} height={770} />
+
+  - lazy loading
+    It loads only when it is really visible
+
+  - priority
+    If it is visible all the time, use priority property!
