@@ -1,12 +1,12 @@
 .header {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   height: 90px;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
   padding: 0 30px;
   background-color: pink;
 
@@ -30,10 +30,6 @@
   .main_nav {
     margin-left: 70px;
     background-color: aquamarine;
-    button {
-      font-size: 15px;
-      font-weight: 400;
-    }
 
     .main_nav_item {
       display: inline-block;
@@ -42,10 +38,6 @@
   }
 
   .sub_nav {
-    button {
-      font-size: 15px;
-      font-weight: 400;
-    }
     .sub_nav_item {
       display: inline-block;
       padding: 10px;

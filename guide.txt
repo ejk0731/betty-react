@@ -90,3 +90,24 @@ Image
 
   - priority
     If it is visible all the time, use priority property!
+
+React Server Components vs. Client Components
+
+  Vanilla React Apps render on the client
+    Server Side (Backend) => Client Side (Frontend)
+    Pre-rendered on the server but also potentially on the client
+    Client side interactivity
+
+  NextJS build Fullstack Applications
+    Render only on the server
+    Server Side (Backend) + Client Side (Frontend)
+    Less client side JS, great for SEO
+    
+    *** To use client component like useState 
+      => write "use client" on the top of the file 
+    
+      Try to make client component separable 
+      to make most of the component on the server side 
+      
+        ex) usePathname
+            If you are using usePathname hook, make that part with the new component

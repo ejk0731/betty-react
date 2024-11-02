@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import styles from './Header.module.scss';
+import NavLink from './NavLink';
 
 export default function Header() {
   return (
@@ -10,7 +11,7 @@ export default function Header() {
       <nav>
         <ul className={styles.main_nav}>
           <li className={styles.main_nav_item}>
-            <button type="button">SHOP</button>
+            <NavLink href={'/shop'}>SHOP</NavLink>
 
             <ul className={styles.sub_nav} style={{ display: 'none' }}>
               <li className={styles.sub_nav_item}>
@@ -37,7 +38,7 @@ export default function Header() {
             <button type="button">COLLECTION</button>
           </li>
           <li className={styles.main_nav_item}>
-            <button type="button">ABOUT</button>
+            <NavLink href={'/about'}>ABOUT</NavLink>
           </li>
           <li className={styles.main_nav_item}>
             <button type="button">COMMUNITY</button>
