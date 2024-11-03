@@ -1,4 +1,4 @@
-import Header from '@/components/common/Header';
+import Header from '@/components/header/Header';
 import styles from './Home.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';

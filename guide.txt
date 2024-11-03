@@ -91,6 +91,9 @@ Image
   - priority
     If it is visible all the time, use priority property!
 
+  - fill
+    If you don't know the dimensions, you can use "fill" instead of setting "width" and "height"
+
 React Server Components vs. Client Components
 
   Vanilla React Apps render on the client
@@ -111,3 +114,11 @@ React Server Components vs. Client Components
       
         ex) usePathname
             If you are using usePathname hook, make that part with the new component
+
+SQLite Database
+  1. command - npm install better-sqlite3
+
+  2. setup initdb.js file
+
+  3. command - node initdb.js
+     => It make meals.db file
