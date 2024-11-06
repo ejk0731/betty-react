@@ -16,6 +16,7 @@ export default function NavLink({
     <>
       <Link
         href={href}
+        scroll={false}
         className={
           path.startsWith(href)
             ? `${styles.link} ${styles.active}`

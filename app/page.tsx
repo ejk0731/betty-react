@@ -1,5 +1,5 @@
 import Header from '@/components/header/Header';
-import styles from './Home.module.scss';
+import styles from './page.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
 import imageMainBanner from '@/images/main_banner.jpg';
