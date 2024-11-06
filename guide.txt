@@ -122,3 +122,13 @@ SQLite Database
 
   3. command - node initdb.js
      => It make meals.db file
+
+loading
+  If you make loading.tsx file next to the page component, 
+  it will show the loading page until the data is loaded
+
+  - Suspense
+    Handle loading states and show fallback content until the data has been loaded
+    Make the data part separate from the page component
+      and use the component in the page component, and wrap it with suspense tag.
+    It will make loading part partially, not as a page

@@ -4,16 +4,22 @@ import Header from '@/components/header/Header';
 import { getItems } from '@/lib/items';
 import ItemsGrid from '@/components/items/ItemsGrid';
 import SubNav from '@/components/header/SubNav';
+import { Suspense } from 'react';
 
-export default async function Shop() {
+async function Items() {
   const items = await getItems();
-  console.log(items);
+  return <ItemsGrid items={items} />;
+}
+
+export default function Shop() {
   return (
     <>
       <Header />
       <main className={styles.wrap}>
         <SubNav />
-        <ItemsGrid items={items} />
+        <Suspense fallback={<div>loading...</div>}>
+          <Items />
+        </Suspense>
       </main>
     </>
   );
