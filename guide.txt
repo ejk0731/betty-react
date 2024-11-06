@@ -126,9 +126,12 @@ SQLite Database
 loading
   If you make loading.tsx file next to the page component, 
   it will show the loading page until the data is loaded
+  It will be also affcted to the nested pages!
 
   - Suspense
     Handle loading states and show fallback content until the data has been loaded
     Make the data part separate from the page component
       and use the component in the page component, and wrap it with suspense tag.
     It will make loading part partially, not as a page
+
+Handling error  
