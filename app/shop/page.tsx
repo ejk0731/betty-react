@@ -5,6 +5,7 @@ import { getItems } from '@/lib/items';
 import ItemsGrid from '@/components/items/ItemsGrid';
 import SubNav from '@/components/header/SubNav';
 import { Suspense } from 'react';
+import BestItemGrid from '@/components/items/BestItemGrid';
 
 async function Items() {
   const items = await getItems();
@@ -17,6 +18,7 @@ export default function Shop() {
       <Header />
       <main className={styles.wrap}>
         <SubNav />
+        <BestItemGrid />
         <Suspense fallback={<div>loading...</div>}>
           <Items />
         </Suspense>
