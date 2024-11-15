@@ -16,8 +16,9 @@ export default function BestItem() {
           <span className={styles.color}></span>
           <span className={styles.color}></span>
         </div>
-        <span className={styles.title}></span>
-        <span className={styles.o_price}></span>
+        <span className={styles.title}>title</span>
+        <span className={styles.o_price}>50000</span>
+        <span className={styles.s_price}>35000</span>
       </div>
     </Link>
   );
