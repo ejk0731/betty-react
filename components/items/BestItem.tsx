@@ -11,13 +11,14 @@ export default function BestItem() {
       <Image src={imgBestItem} alt="" width={100} />
       <div className={styles.info_wrap}>
         <div className={styles.color_wrap}>
-          <span className={styles.color}></span>
-          <span className={styles.color}></span>
-          <span className={styles.color}></span>
-          <span className={styles.color}></span>
+          <span className={`${styles.color} ${styles.orange}`}></span>
+          <span className={`${styles.color} ${styles.brown}`}></span>
+          <span className={`${styles.color} ${styles.green}`}></span>
+          <span className={`${styles.color} ${styles.blue}`}></span>
+          <span className={`${styles.color} ${styles.white}`}></span>
         </div>
         <span className={styles.title}>title</span>
-        <span className={styles.o_price}>50000</span>
+        <s className={styles.o_price}>50000</s>
         <span className={styles.s_price}>35000</span>
       </div>
     </Link>
