@@ -3,6 +3,7 @@ import React from 'react';
 import styles from './BestItem.module.scss';
 import imgBestItem from '@/images/best/4.jpg';
 import Image from 'next/image';
+import Colors from './infos/Colors';
 
 export default function BestItem() {
   return (
@@ -10,13 +11,7 @@ export default function BestItem() {
       <b className={styles.num}>Best 01.</b>
       <Image src={imgBestItem} alt="" width={100} />
       <div className={styles.info_wrap}>
-        <div className={styles.color_wrap}>
-          <span className={`${styles.color} ${styles.orange}`}></span>
-          <span className={`${styles.color} ${styles.brown}`}></span>
-          <span className={`${styles.color} ${styles.green}`}></span>
-          <span className={`${styles.color} ${styles.blue}`}></span>
-          <span className={`${styles.color} ${styles.white}`}></span>
-        </div>
+        <Colors />
         <span className={styles.title}>title</span>
         <s className={styles.o_price}>50000</s>
         <span className={styles.s_price}>35000</span>

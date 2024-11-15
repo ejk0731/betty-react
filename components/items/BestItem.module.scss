@@ -42,38 +42,6 @@
     opacity: 1;
   }
 
-  .color_wrap {
-    padding-bottom: 20px;
-    text-align: center;
-    .color {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      border: 1px solid #e3e3e3;
-      border-radius: 50%;
-
-      &:not(:first-child) {
-        margin-left: 5px;
-      }
-
-      &.orange {
-        background: #d7b170;
-      }
-      &.brown {
-        background: #501704;
-      }
-      &.green {
-        background: #56754c;
-      }
-      &.blue {
-        background: #000082;
-      }
-      &.white {
-        background: #fff;
-      }
-    }
-  }
-
   span,
   s {
     display: block;
