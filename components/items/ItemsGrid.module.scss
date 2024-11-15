@@ -1,0 +1,15 @@
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 60px 100px;
+}
+
+.item {
+  background-color: powderblue;
+  margin-left: 10px;
+
+  &:nth-of-type(3n + 1) {
+    margin-left: 0;
+  }
+}
