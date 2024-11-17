@@ -3,7 +3,6 @@
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: antiquewhite;
   font-size: 0;
 
   img {
@@ -25,7 +24,6 @@
 }
 
 .info_wrap {
-  opacity: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -37,13 +35,19 @@
   width: 100%;
   height: 100%;
   background-color: rgb(255, 255, 255, 0.8);
+  opacity: 0;
   transition: all 0.5s;
   &:hover {
     opacity: 1;
   }
 
-  span,
-  s {
+  .title {
+    margin-top: 0;
+    padding-top: 30px;
+  }
+
+  .title,
+  .price {
     display: block;
     margin-top: 5px;
     font-size: 13px;

@@ -27,10 +27,12 @@ export default function Items({
   return (
     <Link href={`/shop/${itemNumber}`} className={styles.item_wrap}>
       <Image src={imgItemNew1} alt={itemTitle} width={200} height={400} />
-      <Colors />
-      <b>{itemTitle}</b>
-      <s>{originalPrice}</s>
-      <span>{salePrice}</span>
+      <Colors align="left" />
+      <b className={styles.title}>{itemTitle}</b>
+      <s className={`${styles.price} ${styles.original_price}`}>
+        KRW {originalPrice}
+      </s>
+      <span className={styles.price}>KRW {salePrice}</span>
     </Link>
   );
 }

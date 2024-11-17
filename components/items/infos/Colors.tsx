@@ -6,19 +6,18 @@ interface ColorsProps {
 }
 
 export default function Colors({ align = 'center' }: ColorsProps) {
-  // const setAlign = align;
+  let setAlign = '';
+
+  if (align === 'center') {
+    setAlign = `${styles.center}`;
+  } else if (align === 'left') {
+    setAlign = `${styles.left}`;
+  } else if (align === 'right') {
+    setAlign = `${styles.right}`;
+  }
+
   return (
-    <div
-      className={`${styles.color_wrap} ${
-        align
-          ? 'center'
-          : styles.center
-          ? 'left'
-          : styles.left
-          ? 'right'
-          : styles.right
-      }`}
-    >
+    <div className={`${styles.color_wrap} ${setAlign} `}>
       <span className={`${styles.color} ${styles.orange}`}></span>
       <span className={`${styles.color} ${styles.brown}`}></span>
       <span className={`${styles.color} ${styles.green}`}></span>

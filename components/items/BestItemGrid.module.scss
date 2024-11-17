@@ -23,7 +23,6 @@
 
 .item {
   width: calc((100% - (40px * 2) - (15px * 2) / 3));
-  background-color: yellowgreen;
   font-size: 0;
   &:not(:first-child) {
     margin-left: 15px;

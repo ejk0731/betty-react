@@ -8,7 +8,6 @@
 .item {
   width: calc((100% - (20px * 2)) / 3);
   margin-left: 20px;
-  background-color: powderblue;
 
   &:nth-of-type(3n + 1) {
     margin-left: 0;

@@ -13,8 +13,8 @@ export default function BestItem() {
       <div className={styles.info_wrap}>
         <Colors align="center" />
         <span className={styles.title}>title</span>
-        <s className={styles.o_price}>50000</s>
-        <span className={styles.s_price}>35000</span>
+        <s className={styles.price}>50000</s>
+        <span className={styles.price}>35000</span>
       </div>
     </Link>
   );
