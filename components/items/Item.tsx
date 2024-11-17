@@ -1,22 +1,36 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import imgItemNew1 from '@/images/new/1.jpg';
+import styles from './Item.module.scss';
+import Colors from './infos/Colors';
 
 export default function Items({
-  src,
-  title,
-  slug,
+  itemNumber,
+  itemCategory,
+  itemTitle,
+  originalPrice,
+  salePrice,
+  itemColors,
+  itemColorValues,
+  imagePath,
 }: {
-  src: string;
-  title: string;
-  slug: any;
+  itemNumber: string;
+  itemCategory: string;
+  itemTitle: string;
+  originalPrice: number;
+  salePrice: number;
+  itemColors: string;
+  itemColorValues: string;
+  imagePath: string;
 }) {
   return (
-    <Link href={`/shop/${slug}`}>
-      {/* <Image src={src} alt={title} fill /> */}
-      <b>{title}</b>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      <span>price</span>
+    <Link href={`/shop/${itemNumber}`} className={styles.item_wrap}>
+      <Image src={imgItemNew1} alt={itemTitle} width={200} height={400} />
+      <Colors />
+      <b>{itemTitle}</b>
+      <s>{originalPrice}</s>
+      <span>{salePrice}</span>
     </Link>
   );
 }

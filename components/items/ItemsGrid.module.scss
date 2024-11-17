@@ -6,10 +6,15 @@
 }
 
 .item {
-  margin-left: 10px;
+  width: calc((100% - (20px * 2)) / 3);
+  margin-left: 20px;
   background-color: powderblue;
 
   &:nth-of-type(3n + 1) {
     margin-left: 0;
+  }
+
+  &:nth-of-type(n + 4) {
+    margin-top: 20px;
   }
 }

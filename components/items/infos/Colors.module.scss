@@ -1,6 +1,17 @@
 .color_wrap {
   padding-bottom: 20px;
-  text-align: center;
+
+  &.center {
+    text-align: center;
+  }
+
+  &.left {
+    text-align: left;
+  }
+
+  &.right {
+    text-align: right;
+  }
 
   .color {
     display: inline-block;
