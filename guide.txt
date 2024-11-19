@@ -77,6 +77,7 @@ Google font
   *** button tag needs to must have "font-family: inherit;" attribute
 
 Image
+  *** If you don't want to import every single image, you have to put image files in public folder
   import imageMainBanner from '@/images/main_banner.jpg';
     
   - img tag

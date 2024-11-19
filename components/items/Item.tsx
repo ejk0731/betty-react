@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import imgItemNew1 from '@/images/new/1.jpg';
 import styles from './Item.module.scss';
 import Colors from './infos/Colors';
 
 export default function Items({
   itemNumber,
   itemCategory,
+  itemSlug,
   itemTitle,
   originalPrice,
   salePrice,
@@ -17,6 +17,7 @@ export default function Items({
 }: {
   itemNumber: string;
   itemCategory: string;
+  itemSlug: string;
   itemTitle: string;
   originalPrice: number;
   salePrice: number;
@@ -24,9 +25,10 @@ export default function Items({
   itemColorValues: string;
   imagePath: string;
 }) {
+  const setImagePath = `/images/${itemCategory}/${imagePath}`;
   return (
-    <Link href={`/shop/${itemNumber}`} className={styles.item_wrap}>
-      <Image src={imgItemNew1} alt={itemTitle} width={200} height={400} />
+    <Link href={`/shop/${itemSlug}`} className={styles.item_wrap}>
+      <Image src={setImagePath} alt={itemTitle} width={200} height={400} />
       <Colors align="left" />
       <b className={styles.title}>{itemTitle}</b>
       <s className={`${styles.price} ${styles.original_price}`}>

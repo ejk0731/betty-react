@@ -5,6 +5,7 @@ const dummyItems = [
   {
     itemNumber: '13241',
     itemCategory: 'new',
+    itemSlug: 'new-title-1',
     itemTitle: 'Title1',
     originalPrice: 56000,
     salePrice: 50000,
@@ -17,6 +18,7 @@ const dummyItems = [
   {
     itemNumber: '13242',
     itemCategory: 'new',
+    itemSlug: 'new-title-2',
     itemTitle: 'Title2',
     originalPrice: 56000,
     salePrice: 50000,
@@ -29,6 +31,7 @@ const dummyItems = [
   {
     itemNumber: '13243',
     itemCategory: 'new',
+    itemSlug: 'new-title-3',
     itemTitle: 'Title3',
     originalPrice: 56000,
     salePrice: 50000,
@@ -41,6 +44,7 @@ const dummyItems = [
   {
     itemNumber: '13241',
     itemCategory: 'new',
+    itemSlug: 'new-title-4',
     itemTitle: 'Title4',
     originalPrice: 56000,
     salePrice: 50000,
@@ -53,6 +57,7 @@ const dummyItems = [
   {
     itemNumber: '13241',
     itemCategory: 'new',
+    itemSlug: 'new-title-5',
     itemTitle: 'Title5',
     originalPrice: 56000,
     salePrice: 50000,
@@ -65,6 +70,7 @@ const dummyItems = [
   {
     itemNumber: '13241',
     itemCategory: 'new',
+    itemSlug: 'new-title-6',
     itemTitle: 'Title6',
     originalPrice: 56000,
     salePrice: 50000,
@@ -77,6 +83,7 @@ const dummyItems = [
   {
     itemNumber: '13241',
     itemCategory: 'new',
+    itemSlug: 'new-title-7',
     itemTitle: 'Title7',
     originalPrice: 56000,
     salePrice: 50000,
@@ -89,6 +96,7 @@ const dummyItems = [
   {
     itemNumber: '13241',
     itemCategory: 'new',
+    itemSlug: 'new-title-8',
     itemTitle: 'Title8',
     originalPrice: 56000,
     salePrice: 50000,
@@ -101,6 +109,7 @@ const dummyItems = [
   {
     itemNumber: '13241',
     itemCategory: 'new',
+    itemSlug: 'new-title-9',
     itemTitle: 'Title9',
     originalPrice: 56000,
     salePrice: 50000,
@@ -113,6 +122,7 @@ const dummyItems = [
   {
     itemNumber: '13241',
     itemCategory: 'new',
+    itemSlug: 'new-title-10',
     itemTitle: 'Title10',
     originalPrice: 56000,
     salePrice: 50000,
@@ -125,6 +135,7 @@ const dummyItems = [
   {
     itemNumber: '13241',
     itemCategory: 'new',
+    itemSlug: 'new-title-11',
     itemTitle: 'Title11',
     originalPrice: 56000,
     salePrice: 50000,
@@ -137,6 +148,7 @@ const dummyItems = [
   {
     itemNumber: '13241',
     itemCategory: 'new',
+    itemSlug: 'new-title-12',
     itemTitle: 'Title12',
     originalPrice: 56000,
     salePrice: 50000,
@@ -154,6 +166,7 @@ db.prepare(
        id INTEGER PRIMARY KEY AUTOINCREMENT,
        itemNumber STRING NOT NULL,
        itemCategory STRING NOT NULL,
+       itemSlug STRING NOT NULL,
        itemTitle STRING NOT NULL,
        originalPrice NUMBER NOT NULL,
        salePrice NUMBER NOT NULL,
@@ -172,6 +185,7 @@ async function initData() {
          null,
          @itemNumber,
          @itemCategory,
+         @itemSlug,
          @itemTitle,
          @originalPrice,
          @salePrice,
