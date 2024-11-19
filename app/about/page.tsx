@@ -1,12 +1,9 @@
-import Header from '@/components/header/Header';
+import Layout from '@/components/Layout/Layout';
 
 export default function About() {
   return (
-    <>
-      <Header />
-      <main>
-        <h1>Hello! NEXT.js</h1>
-      </main>
-    </>
+    <Layout>
+      <h1>Hello! NEXT.js</h1>
+    </Layout>
   );
 }

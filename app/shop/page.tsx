@@ -1,11 +1,10 @@
-import Link from 'next/link';
 import styles from './page.module.scss';
-import Header from '@/components/header/Header';
 import { getItems } from '@/lib/items';
-import ItemsGrid from '@/components/items/ItemsGrid';
-import SubNav from '@/components/header/SubNav';
+import ItemsGrid from '@/components/Item/ItemsGrid';
+import SubNav from '@/components/Header/SubNav';
 import { Suspense } from 'react';
-import BestItemGrid from '@/components/items/BestItemGrid';
+import BestItemGrid from '@/components/Item/BestItemGrid';
+import Layout from '@/components/Layout/Layout';
 
 async function Items() {
   const items = await getItems();
@@ -14,15 +13,14 @@ async function Items() {
 
 export default function Shop() {
   return (
-    <>
-      <Header />
-      <main className={styles.wrap}>
+    <Layout>
+      <div className={styles.wrap}>
         <SubNav />
         <BestItemGrid />
         <Suspense fallback={<div>loading...</div>}>
           <Items />
         </Suspense>
-      </main>
-    </>
+      </div>
+    </Layout>
   );
 }
