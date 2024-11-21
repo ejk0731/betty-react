@@ -136,3 +136,10 @@ loading
     It will make loading part partially, not as a page
 
 Handling error  
+  If the page has error or not found situation, it will show each component on the page.  
+  - error : add error.tsx file inside the app folder
+  - not found : add not-found.tsx file inside the app folder
+                ++ Throwing Not Found Errors For Individual 
+                    if (!item) {
+                      notFound();
+                    }

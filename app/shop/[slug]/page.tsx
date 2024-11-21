@@ -2,9 +2,14 @@ import Layout from '@/components/Layout/Layout';
 import { ITEM_IMAGE_PATH } from '@/constants/url';
 import { getSlug } from '@/lib/items';
 import Image from 'next/image';
+import { notFound } from 'next/navigation';
 
 export default function Category({ params }: { params: { slug: string } }) {
   const item = getSlug(params.slug);
+
+  if (!item) {
+    notFound();
+  }
   // console.log(item);
   const setImagePath = `${ITEM_IMAGE_PATH}${item.itemCategory}/${item.imagePath}`;
   return (
