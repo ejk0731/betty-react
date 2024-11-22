@@ -143,3 +143,21 @@ Handling error
                     if (!item) {
                       notFound();
                     }
+
+useRef
+  const imageInputRef = useRef<HTMLInputElement | null>(null);
+  function handleClickBtn() {
+    // need to have this if() part or it will throw you an error!
+    // like.....  "'imageInputRef.current' is possibly 'null'."
+    if (imageInputRef.current) { 
+      imageInputRef.current.click();
+    }
+
+    <input
+      type="file"
+      id={name}
+      accept="image/png, image/jpeg"
+      name={name}
+      ref={imageInputRef}
+    />
+  }
