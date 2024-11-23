@@ -164,3 +164,8 @@ useRef
 
 'use server'
   it can not be used with 'use client'
+
+npm install slugify xss
+  vulnerable to cross-site scripting attacks
+  need to protect and should sanitize the content sent by the user
+  => xss package will help

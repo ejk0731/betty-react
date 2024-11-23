@@ -1,3 +1,4 @@
+import fs from 'node:fs';
 import Layout from '@/components/Layout/Layout';
 import styles from './page.module.scss';
 import ImagePicker from '@/components/ImagePicker/ImagePicker';
@@ -36,7 +37,7 @@ export default function Faq() {
                 required
               ></textarea>
             </p>
-            <ImagePicker label={'file'} name={'file'} />
+            <ImagePicker label={'image'} name={'image'} />
             <p className={styles.actions}>
               <button type="submit">Share Meal</button>
             </p>
