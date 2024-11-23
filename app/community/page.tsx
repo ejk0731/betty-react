@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './page.module.scss';
 import Layout from '@/components/Layout/Layout';
 
-export default function page() {
+export default function Community() {
   return (
     <Layout>
       <div className={styles.wrap}>

@@ -161,3 +161,6 @@ useRef
       ref={imageInputRef}
     />
   }
+
+'use server'
+  it can not be used with 'use client'

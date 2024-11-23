@@ -23,6 +23,7 @@ export default function ImagePicker({
     console.log(file);
 
     if (!file) {
+      setPickedImage(null);
       return;
     }
 
@@ -50,6 +51,7 @@ export default function ImagePicker({
           name={name}
           ref={imageInputRef}
           // multiple
+          required
           onChange={handleChangeImage}
         />
         <button type="button" onClick={handleClickBtn}>

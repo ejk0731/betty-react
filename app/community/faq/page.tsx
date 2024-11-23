@@ -1,13 +1,14 @@
 import Layout from '@/components/Layout/Layout';
 import styles from './page.module.scss';
 import ImagePicker from '@/components/ImagePicker/ImagePicker';
+import { sendFaq } from '@/lib/actions';
 
-export default function ShareMealPage() {
+export default function Faq() {
   return (
     <>
       <Layout>
         <div className={styles.wrap}>
-          <form className={styles.form}>
+          <form className={styles.form} action={sendFaq}>
             <div className={styles.row}>
               <p>
                 <label htmlFor="name">Your name</label>
