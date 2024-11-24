@@ -1,17 +1,19 @@
 'use server';
 
 import { redirect } from 'next/navigation';
-import { saveFaq } from './items';
+import { saveFaq } from './faq';
 
 export async function sendFaq(formData: any) {
   console.log(formData);
 
   const faq = {
+    name: formData.get('name'),
+    email: formData.get('email'),
     title: formData.get('title'),
-    summery: formData.get('summary'),
+    summary: formData.get('summary'),
     image: formData.get('image'),
   };
 
   await saveFaq(faq);
-  redirect('/community/faq');
+  redirect('/community');
 }

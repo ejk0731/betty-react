@@ -28,15 +28,6 @@ export default function Faq() {
               <label htmlFor="summary">Short Summary</label>
               <input type="text" id="summary" name="summary" required />
             </p>
-            <p>
-              <label htmlFor="instructions">Instructions</label>
-              <textarea
-                id="instructions"
-                name="instructions"
-                rows={10}
-                required
-              ></textarea>
-            </p>
             <ImagePicker label={'image'} name={'image'} />
             <p className={styles.actions}>
               <button type="submit">Share Meal</button>
