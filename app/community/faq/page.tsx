@@ -1,15 +1,19 @@
+'use client';
+
 import Layout from '@/components/Layout/Layout';
 import styles from './page.module.scss';
 import ImagePicker from '@/components/ImagePicker/ImagePicker';
 import { sendFaq } from '@/lib/actions';
 import FaqFormSubmit from '@/components/Faq/FaqFormSubmit';
+import { useFormState } from 'react-dom';
 
 export default function Faq() {
+  const [state, formAction] = useFormState(sendFaq, { message: 'null' });
   return (
     <>
       <Layout>
         <div className={styles.wrap}>
-          <form className={styles.form} action={sendFaq}>
+          <form className={styles.form} action={formAction}>
             <div className={styles.row}>
               <p>
                 <label htmlFor="name">Your name</label>
@@ -29,6 +33,7 @@ export default function Faq() {
               <input type="text" id="summary" name="summary" required />
             </p>
             <ImagePicker label={'image'} name={'image'} />
+            {state.message && <p>{state.message}</p>}
             <p className={styles.actions}>
               <FaqFormSubmit />
             </p>

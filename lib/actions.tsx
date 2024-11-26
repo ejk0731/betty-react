@@ -7,7 +7,7 @@ function isInvalidText(text: string) {
   return !text || text.trim() === '';
 }
 
-export async function sendFaq(formData: any) {
+export async function sendFaq(prevState: any, formData: any) {
   console.log(formData);
 
   const faq = {
@@ -28,7 +28,9 @@ export async function sendFaq(formData: any) {
     !faq.image ||
     faq.image.size === 0
   ) {
-    throw new Error('Invalid input');
+    return {
+      message: 'Invalid input',
+    };
   }
   await saveFaq(faq);
   redirect('/community');
