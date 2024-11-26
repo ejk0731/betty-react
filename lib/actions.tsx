@@ -3,6 +3,10 @@
 import { redirect } from 'next/navigation';
 import { saveFaq } from './faq';
 
+function isInvalidText(text: string) {
+  return !text || text.trim() === '';
+}
+
 export async function sendFaq(formData: any) {
   console.log(formData);
 
@@ -14,6 +18,18 @@ export async function sendFaq(formData: any) {
     image: formData.get('image'),
   };
 
+  if (
+    isInvalidText(faq.name) ||
+    isInvalidText(faq.email) ||
+    isInvalidText(faq.title) ||
+    isInvalidText(faq.summary) ||
+    isInvalidText(faq.image) ||
+    !faq.email.include('@') ||
+    !faq.image ||
+    faq.image.size === 0
+  ) {
+    throw new Error('Invalid input');
+  }
   await saveFaq(faq);
   redirect('/community');
 }

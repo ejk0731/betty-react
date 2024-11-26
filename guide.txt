@@ -169,3 +169,6 @@ npm install slugify xss
   vulnerable to cross-site scripting attacks
   need to protect and should sanitize the content sent by the user
   => xss package will help
+
+When you get inputs from users, client-side validation is not enough.
+It needs to be also validated by server-side.
