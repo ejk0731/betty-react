@@ -4,25 +4,13 @@ import { getSlug } from '@/lib/items';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
-export interface IItemProps {
-  itemNumber?: string;
-  itemCategory: string;
-  itemSlug?: string;
-  itemTitle: string;
-  originalPrice: number;
-  salePrice: number;
-  itemColors?: string;
-  itemColorValues?: string;
-  imagePath: string;
-}
 export default function Category({ params }: { params: { slug: string } }) {
-  const item: IItemProps = getSlug(params.slug);
+  const item = getSlug(params.slug);
 
   if (!item) {
     notFound();
-    return null;
   }
-  console.log(item);
+  // console.log(item);
   const setImagePath = `${ITEM_IMAGE_PATH}${item.itemCategory}/${item.imagePath}`;
   return (
     <Layout>

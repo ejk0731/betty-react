@@ -1,4 +1,3 @@
-import { IItemProps } from '@/app/shop/[slug]/page';
 import sql from 'better-sqlite3';
 
 const db = sql('items.db');
@@ -9,13 +8,6 @@ export async function getItems() {
   return db.prepare('SELECT * FROM items').all();
 }
 
-export function getSlug(slug: string): IItemProps | unknown {
-  const item: IItemProps | unknown = db
-    .prepare('SELECT * FROM items WHERE itemSlug = ?')
-    .get(slug);
-
-  if (item) {
-    return item as IItemProps;
-  }
-  return null;
+export function getSlug(slug: []) {
+  return db.prepare('SELECT * FROM items WHERE itemSlug = ?').get(slug);
 }
