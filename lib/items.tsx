@@ -8,6 +8,6 @@ export async function getItems() {
   return db.prepare('SELECT * FROM items').all();
 }
 
-export function getSlug(slug: []) {
+export function getSlug(slug: string) {
   return db.prepare('SELECT * FROM items WHERE itemSlug = ?').get(slug);
 }

@@ -4,8 +4,20 @@ import { getSlug } from '@/lib/items';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
-export default function Category({ params }: { params: { slug: string } }) {
-  const item = getSlug(params.slug);
+interface IItemProps {
+  itemNumber: string;
+  itemCategory: string;
+  itemSlug: string;
+  itemTitle: string;
+  originalPrice: number;
+  salePrice: number;
+  itemColors: string;
+  itemColorValues: string;
+  imagePath: string;
+}
+
+export default function Category({ params }: { params: any }) {
+  const item = getSlug(params.slug) as IItemProps;
 
   if (!item) {
     notFound();
