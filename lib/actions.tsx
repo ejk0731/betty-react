@@ -23,8 +23,7 @@ export async function sendFaq(prevState: any, formData: any) {
     isInvalidText(faq.email) ||
     isInvalidText(faq.title) ||
     isInvalidText(faq.summary) ||
-    isInvalidText(faq.image) ||
-    !faq.email.include('@') ||
+    !faq.email.includes('@') ||
     !faq.image ||
     faq.image.size === 0
   ) {
