@@ -32,5 +32,6 @@ export async function sendFaq(prevState: any, formData: any) {
     };
   }
   await saveFaq(faq);
+
   redirect('/community');
 }
