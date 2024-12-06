@@ -1,0 +1,21 @@
+.wrap {
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.sub_wrap {
+  margin-left: 40px;
+}
+
+.title_wrap {
+  display: flex;
+
+  .title {
+    font-size: 60px;
+    font-weight: 300;
+  }
+}
