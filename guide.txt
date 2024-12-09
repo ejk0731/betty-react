@@ -180,3 +180,10 @@ Triggering Cache Revalidations
   revalidatePath('/community');
   revalidatePath('/', 'page');  ===> default 
   revalidatePath('/', 'layout');
+
+metadata
+  default : metadata in layout.tsx 
+  If the specific page has it's own metadata, it will show it's own.
+
+  dynamic metadata
+  export async function generateMetadata() {}
