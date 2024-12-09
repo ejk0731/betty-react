@@ -172,3 +172,11 @@ npm install slugify xss
 
 When you get inputs from users, client-side validation is not enough.
 It needs to be also validated by server-side.
+
+Triggering Cache Revalidations
+  Because of cache, i could not see the uploaded item right away.
+  So you need to revalidatePath('/community');
+  But it will only revalidate that specific path only!
+  revalidatePath('/community');
+  revalidatePath('/', 'page');  ===> default 
+  revalidatePath('/', 'layout');

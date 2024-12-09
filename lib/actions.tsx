@@ -2,6 +2,7 @@
 
 import { redirect } from 'next/navigation';
 import { saveFaq } from './faq';
+import { revalidatePath } from 'next/cache';
 
 function isInvalidText(text: string) {
   return !text || text.trim() === '';
@@ -32,6 +33,6 @@ export async function sendFaq(prevState: any, formData: any) {
     };
   }
   await saveFaq(faq);
-
+  revalidatePath('/community');
   redirect('/community');
 }
