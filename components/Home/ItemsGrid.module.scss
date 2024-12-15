@@ -8,5 +8,6 @@
   flex-wrap: wrap;
   .item {
     width: calc((100% - (20px * 2)) / 3);
+    font-size: 0;
   }
 }
