@@ -3,12 +3,18 @@ import Item from '../Item/Item';
 import styles from './ItemsGrid.module.scss';
 import BestItem from '../Item/BestItem';
 
-export default function ItemsGrid({ items }: { items: any }) {
+export default function ItemsGrid({
+  items,
+  title,
+}: {
+  items: any;
+  title: string;
+}) {
   return (
     <div className={styles.wrap}>
-      <span>New Arrivals</span>
+      <span className={styles.title}>{title}</span>
       <ul className={styles.item_wrap}>
-        {items.map((item: any) => {
+        {items.slice(0, 9).map((item: any) => {
           return (
             <li key={item.id} className={styles.item}>
               <BestItem {...item} />
@@ -16,7 +22,7 @@ export default function ItemsGrid({ items }: { items: any }) {
           );
         })}
       </ul>
-      <span>New Arrivals</span>
+      <span className={`${styles.title} ${styles.right}`}>{title}</span>
     </div>
   );
 }

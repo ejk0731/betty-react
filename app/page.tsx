@@ -7,7 +7,7 @@ import { Suspense } from 'react';
 
 async function Items() {
   const items = await getItems();
-  return <ItemsGrid items={items} />;
+  return <ItemsGrid items={items} title={'New Arrivals'} />;
 }
 
 export default function Home() {

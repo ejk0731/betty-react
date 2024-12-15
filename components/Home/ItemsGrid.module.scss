@@ -1,6 +1,7 @@
 .wrap {
+  position: relative;
+  padding: 150px 200px;
   background: rgb(225, 218, 207);
-  padding: 100px;
 }
 
 .item_wrap {
@@ -9,5 +10,27 @@
   .item {
     width: calc((100% - (20px * 2)) / 3);
     font-size: 0;
+
+    &:not(:nth-child(3n + 1), :first-child) {
+      margin-left: 20px;
+    }
+
+    &:not(:nth-child(1), :nth-child(2), :nth-child(3)) {
+      margin-top: 20px;
+    }
+  }
+}
+
+.title {
+  position: absolute;
+  top: 50%;
+  left: 40px;
+  transform: translateY(-50%) rotateZ(-90deg);
+  font-size: 30px;
+
+  &.right {
+    left: auto;
+    right: 40px;
+    transform: translateY(-50%) rotateZ(90deg);
   }
 }
