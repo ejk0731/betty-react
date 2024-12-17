@@ -2,7 +2,7 @@ import Layout from '@/components/Layout/Layout';
 import MainBanner from '@/components/Home/MainBanner';
 import Collection from '@/components/Home/Collection';
 import ItemsGrid from '@/components/Home/ItemsGrid';
-import { getItems } from '@/lib/items';
+import { getItems } from '@/lib/apis/items';
 import { Suspense } from 'react';
 
 async function Items() {

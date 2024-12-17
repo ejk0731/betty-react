@@ -1,6 +1,6 @@
 import Layout from '@/components/Layout/Layout';
-import { ITEM_IMAGE_PATH } from '@/constants/url';
-import { getSlug } from '@/lib/items';
+import { ITEM_IMAGE_PATH } from '@/lib/constants/url';
+import { getSlug } from '@/lib/apis/items';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 

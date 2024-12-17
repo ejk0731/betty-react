@@ -1,5 +1,5 @@
 import styles from './page.module.scss';
-import { getItems } from '@/lib/items';
+import { getItems } from '@/lib/apis/items';
 import ItemsGrid from '@/components/Item/ItemsGrid';
 import SubNav from '@/components/Header/SubNav';
 import { Suspense } from 'react';

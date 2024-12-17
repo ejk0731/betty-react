@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import styles from './page.module.scss';
 import Layout from '@/components/Layout/Layout';
-import { getFaq } from '@/lib/faq';
+import { getFaq } from '@/lib/apis/faq';
 
 async function Faq() {
   const faq = await getFaq();

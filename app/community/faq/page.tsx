@@ -3,7 +3,7 @@
 import Layout from '@/components/Layout/Layout';
 import styles from './page.module.scss';
 import ImagePicker from '@/components/ImagePicker/ImagePicker';
-import { sendFaq } from '@/lib/actions';
+import { sendFaq } from '@/lib/apis/actions';
 import FaqFormSubmit from '@/components/Faq/FaqFormSubmit';
 import { useFormState } from 'react-dom';
 
