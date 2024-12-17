@@ -1,5 +1,5 @@
 import React from 'react';
-import BestItem from './BestItem';
+import ItemWithHover from './ItemWithHover';
 import styles from './BestItemGrid.module.scss';
 
 export default function BestItemGrid() {
@@ -11,7 +11,7 @@ export default function BestItemGrid() {
         {item.map(index => {
           return (
             <li key={index} className={styles.item}>
-              <BestItem />
+              <ItemWithHover showTopTitle topTitleNumber={index} />
             </li>
           );
         })}

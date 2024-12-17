@@ -1,7 +1,6 @@
 import React from 'react';
-import Item from '../Item/Item';
 import styles from './ItemsGrid.module.scss';
-import BestItem from '../Item/BestItem';
+import ItemWithHover from '../Item/ItemWithHover';
 
 export default function ItemsGrid({
   items,
@@ -17,7 +16,7 @@ export default function ItemsGrid({
         {items.slice(0, 9).map((item: any) => {
           return (
             <li key={item.id} className={styles.item}>
-              <BestItem {...item} />
+              <ItemWithHover {...item} />
             </li>
           );
         })}

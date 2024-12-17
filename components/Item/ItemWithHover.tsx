@@ -5,10 +5,19 @@ import imgBestItem from '@/public/images/best/4.jpg';
 import Image from 'next/image';
 import Colors from './infos/Colors';
 
-export default function BestItem() {
+interface IItemWithHoverProps {
+  showTopTitle?: boolean;
+  topTitleNumber?: number;
+}
+
+export default function ItemWithHover({
+  showTopTitle = false,
+  topTitleNumber,
+}: IItemWithHoverProps) {
+  const topTitle = `Best 0${topTitleNumber}.`;
   return (
     <Link href={'/shop'} scroll={false} className={styles.item}>
-      <b className={styles.num}>Best 01.</b>
+      {showTopTitle && <b className={styles.num}>{topTitle}</b>}
       <Image src={imgBestItem} alt="" width={100} />
       <div className={styles.info_wrap}>
         <Colors align="center" />
