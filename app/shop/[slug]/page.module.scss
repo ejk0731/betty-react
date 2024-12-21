@@ -1,0 +1,28 @@
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  padding-top: 160px;
+  margin: 0 auto;
+}
+
+.image_wrap {
+  display: grid;
+  width: 100%;
+  grid-template-rows: 400px;
+  grid-template-columns: repeat(1, 50% 2fr);
+  gap: 10px;
+
+  .img_box {
+    position: relative;
+    // width: calc((100% - 10px) / 2);
+
+    img {
+      position: static;
+    }
+  }
+}
+
+.info_wrap {
+  padding-left: 30px;
+}
