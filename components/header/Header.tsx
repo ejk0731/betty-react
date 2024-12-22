@@ -6,49 +6,51 @@ export default function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.header_wrap}>
-        <Link href={'/'} className={styles.logo}>
-          <h1>Betty</h1>
-        </Link>
-        <nav>
-          <ul className={styles.main_nav}>
-            <li className={styles.main_nav_item}>
-              <NavLink href={'/shop'}>SHOP</NavLink>
+        <div className={styles.header_left}>
+          <Link href={'/'} className={styles.logo}>
+            <h1>Betty</h1>
+          </Link>
+          <nav>
+            <ul className={styles.main_nav}>
+              <li className={styles.main_nav_item}>
+                <NavLink href={'/shop'}>SHOP</NavLink>
 
-              <ul className={styles.sub_nav} style={{ display: 'none' }}>
-                <li className={styles.sub_nav_item}>
-                  <button type="button">New Arrivals</button>
-                </li>
-                <li className={styles.sub_nav_item}>
-                  <button type="button">Outerwear</button>
-                </li>
-                <li className={styles.sub_nav_item}>
-                  <button type="button">Top</button>
-                </li>
-                <li className={styles.sub_nav_item}>
-                  <button type="button">Bottom</button>
-                </li>
-                <li className={styles.sub_nav_item}>
-                  <button type="button">Dress</button>
-                </li>
-                <li className={styles.sub_nav_item}>
-                  <button type="button">Accessories</button>
-                </li>
-              </ul>
-            </li>
-            <li className={styles.main_nav_item}>
-              <button type="button">COLLECTION</button>
-            </li>
-            <li className={styles.main_nav_item}>
-              <NavLink href={'/about'}>ABOUT</NavLink>
-            </li>
-            <li className={styles.main_nav_item}>
-              <NavLink href={'/community'}>COMMUNITY</NavLink>
-            </li>
-            {/* <li className={styles.main_nav_item}>
+                <ul className={styles.sub_nav} style={{ display: 'none' }}>
+                  <li className={styles.sub_nav_item}>
+                    <button type="button">New Arrivals</button>
+                  </li>
+                  <li className={styles.sub_nav_item}>
+                    <button type="button">Outerwear</button>
+                  </li>
+                  <li className={styles.sub_nav_item}>
+                    <button type="button">Top</button>
+                  </li>
+                  <li className={styles.sub_nav_item}>
+                    <button type="button">Bottom</button>
+                  </li>
+                  <li className={styles.sub_nav_item}>
+                    <button type="button">Dress</button>
+                  </li>
+                  <li className={styles.sub_nav_item}>
+                    <button type="button">Accessories</button>
+                  </li>
+                </ul>
+              </li>
+              <li className={styles.main_nav_item}>
+                <button type="button">COLLECTION</button>
+              </li>
+              <li className={styles.main_nav_item}>
+                <NavLink href={'/about'}>ABOUT</NavLink>
+              </li>
+              <li className={styles.main_nav_item}>
+                <NavLink href={'/community'}>COMMUNITY</NavLink>
+              </li>
+              {/* <li className={styles.main_nav_item}>
               <button type="button">MY ACCOUNT</button>
             </li> */}
-          </ul>
-        </nav>
+            </ul>
+          </nav>
+        </div>
 
         <ul className={styles.sub_nav}>
           <li className={styles.sub_nav_item}>

@@ -11,9 +11,15 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    width: 80%;
+    width: 90%;
     height: 100%;
     margin: 0 auto;
+
+    .header_left {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-end;
+    }
   }
 
   &.is_active {
@@ -34,7 +40,7 @@
   }
 
   .main_nav {
-    margin-left: 20px;
+    margin-left: 60px;
 
     .main_nav_item {
       display: inline-block;
