@@ -4,6 +4,7 @@ import { getSlug } from '@/lib/apis/items';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import styles from './page.module.scss';
+import Link from 'next/link';
 
 interface IItemProps {
   itemNumber: string;
@@ -76,58 +77,89 @@ export default function Category({ params }: { params: any }) {
           </div>
         </div>
         <div className={styles.info_wrap}>
-          <span>Home &gt; Shop &gt; {item.itemCategory} </span>
+          <div className={styles.breadcrumb}>
+            <Link href={'/'}>Home</Link> &gt;
+            <Link href={'/shop'}> Shop</Link> &gt;
+            <Link href={'/shop'}> {item.itemCategory}</Link>
+          </div>
           <p>{item.itemTitle}</p>
           <div>
             <s>{item.originalPrice}</s>
             <span>{item.salePrice}</span>
           </div>
-          <div className="option_wrap">
-            <div className="color_wrap">
+          <div className={styles.option_wrap}>
+            <div className={styles.color_wrap}>
               <span>Color</span>
-              <div className="color">
+              <div className={styles.color}>
                 <input type="radio" name="colorOption" id="orange" />
                 <label htmlFor="orange">Orange</label>
               </div>
-              <div className="color">
+              <div className={styles.color}>
                 <input type="radio" name="colorOption" id="green" />
                 <label htmlFor="green">Green</label>
               </div>
-              <div className="color">
+              <div className={styles.color}>
                 <input type="radio" name="colorOption" id="blue" />
                 <label htmlFor="blue">Blue</label>
               </div>
-              <div className="color">
+              <div className={styles.color}>
                 <input type="radio" name="colorOption" id="white" />
                 <label htmlFor="white">White</label>
               </div>
             </div>
-            <div className="size_wrap">
+            <div className={styles.size_wrap}>
               <span>Size</span>
-              <div className="size">
+              <div className={styles.size}>
                 <input type="radio" name="sizeOption" id="size-s" />
                 <label htmlFor="size-s">S</label>
               </div>
-              <div className="size">
+              <div className={styles.size}>
                 <input type="radio" name="sizeOption" id="size-m" />
                 <label htmlFor="size-m">M</label>
               </div>
-              <div className="size">
+              <div className={styles.size}>
                 <input type="radio" name="sizeOption" id="size-l" />
                 <label htmlFor="size-l">L</label>
               </div>
             </div>
           </div>
-          <div className="tab_wrap">
-            <div className="tab_header">
+          <div className={styles.tab_wrap}>
+            <div className={styles.tab_header}>
               <button type="button">Description</button>
-              <button type="button">Guide</button>
-              <button type="button">Shopping</button>
+              <button type="button">Size Guide</button>
+              <button type="button">Shipping</button>
             </div>
-            <div className="tab_content">
-              <div></div>
-              <div></div>
-              <div></div>
+            <div className={styles.tab_content}>
+              <div>
+                <p>
+                  A knit mini dress featuring a mock neck, allover sequin
+                  embellishments, long sleeves, and bodycon silhouette.
+                </p>
+                <span>Content + Care</span>
+                <ul>
+                  <li>Shell: 75% polyester, 25% metallic yarn</li>
+                  <li>Lining 1: 95% polyester, 5% spandex</li>
+                  <li>Lining 2: 100% polyester</li>
+                  <li>Hand wash cold</li>
+                </ul>
+              </div>
+              <div>
+                <p>
+                  <span> How to measure your waist</span>
+                  Measure around the narrowest part of your natural waist,
+                  generally around the belly button. To ensure a comfortable
+                  fit, keep one finger between the measuring tape and your body.
+                </p>
+              </div>
+              <div>
+                <span>Shipping</span>
+                <p>Delivery in 3-5 working days.</p>
+                <span>Returns</span>
+                <p>
+                  You have 30 days from the shipping date to return your
+                  purchase
+                </p>
+              </div>
             </div>
           </div>
         </div>
