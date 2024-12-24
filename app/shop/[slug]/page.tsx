@@ -41,124 +41,133 @@ export default function Category({ params }: { params: any }) {
   const setImagePath = `${ITEM_IMAGE_PATH}${item.itemCategory}/${item.imagePath}`;
   return (
     <Layout>
-      <div className={styles.wrap}>
-        <div className={styles.image_wrap}>
-          <div className={styles.img_box}>
-            <Image
-              src={setImagePath}
-              fill
-              alt={item.itemTitle}
-              objectFit="cover"
-            />
-          </div>
-          <div className={styles.img_box}>
-            <Image
-              src={setImagePath}
-              fill
-              alt={item.itemTitle}
-              objectFit="cover"
-            />
-          </div>
-          <div className={styles.img_box}>
-            <Image
-              src={setImagePath}
-              fill
-              alt={item.itemTitle}
-              objectFit="cover"
-            />
-          </div>
-          <div className={styles.img_box}>
-            <Image
-              src={setImagePath}
-              fill
-              alt={item.itemTitle}
-              objectFit="cover"
-            />
-          </div>
-        </div>
-        <div className={styles.info_wrap}>
-          <div className={styles.breadcrumb}>
-            <Link href={'/'}>Home</Link> &gt;
-            <Link href={'/shop'}> Shop</Link> &gt;
-            <Link href={'/shop'}> {item.itemCategory}</Link>
-          </div>
-          <p>{item.itemTitle}</p>
-          <div>
-            <s>{item.originalPrice}</s>
-            <span>{item.salePrice}</span>
-          </div>
-          <div className={styles.option_wrap}>
-            <div className={styles.color_wrap}>
-              <span>Color</span>
-              <div className={styles.color}>
-                <input type="radio" name="colorOption" id="orange" />
-                <label htmlFor="orange">Orange</label>
-              </div>
-              <div className={styles.color}>
-                <input type="radio" name="colorOption" id="green" />
-                <label htmlFor="green">Green</label>
-              </div>
-              <div className={styles.color}>
-                <input type="radio" name="colorOption" id="blue" />
-                <label htmlFor="blue">Blue</label>
-              </div>
-              <div className={styles.color}>
-                <input type="radio" name="colorOption" id="white" />
-                <label htmlFor="white">White</label>
-              </div>
+      <div className={styles.background_wrap}>
+        <div className={styles.wrap}>
+          <div className={styles.image_wrap}>
+            <div className={styles.img_box}>
+              <Image
+                src={setImagePath}
+                fill
+                alt={item.itemTitle}
+                objectFit="cover"
+              />
             </div>
-            <div className={styles.size_wrap}>
-              <span>Size</span>
-              <div className={styles.size}>
-                <input type="radio" name="sizeOption" id="size-s" />
-                <label htmlFor="size-s">S</label>
-              </div>
-              <div className={styles.size}>
-                <input type="radio" name="sizeOption" id="size-m" />
-                <label htmlFor="size-m">M</label>
-              </div>
-              <div className={styles.size}>
-                <input type="radio" name="sizeOption" id="size-l" />
-                <label htmlFor="size-l">L</label>
-              </div>
+            <div className={styles.img_box}>
+              <Image
+                src={setImagePath}
+                fill
+                alt={item.itemTitle}
+                objectFit="cover"
+              />
+            </div>
+            <div className={styles.img_box}>
+              <Image
+                src={setImagePath}
+                fill
+                alt={item.itemTitle}
+                objectFit="cover"
+              />
+            </div>
+            <div className={styles.img_box}>
+              <Image
+                src={setImagePath}
+                fill
+                alt={item.itemTitle}
+                objectFit="cover"
+              />
             </div>
           </div>
-          <div className={styles.tab_wrap}>
-            <div className={styles.tab_header}>
-              <button type="button">Description</button>
-              <button type="button">Size Guide</button>
-              <button type="button">Shipping</button>
+          <div className={styles.info_wrap}>
+            <div className={styles.breadcrumb}>
+              <Link href={'/'}>Home</Link> &gt;
+              <Link href={'/shop'}> Shop</Link> &gt;
+              <Link href={'/shop'}> {item.itemCategory}</Link>
             </div>
-            <div className={styles.tab_content}>
-              <div>
-                <p>
-                  A knit mini dress featuring a mock neck, allover sequin
-                  embellishments, long sleeves, and bodycon silhouette.
-                </p>
-                <span>Content + Care</span>
-                <ul>
-                  <li>Shell: 75% polyester, 25% metallic yarn</li>
-                  <li>Lining 1: 95% polyester, 5% spandex</li>
-                  <li>Lining 2: 100% polyester</li>
-                  <li>Hand wash cold</li>
-                </ul>
+
+            <b className={styles.item_title}>{item.itemTitle}</b>
+
+            <div className={styles.price_box}>
+              <del className={styles.o_price}>KRW{item.originalPrice}</del>
+              <span className={styles.s_price}>KRW{item.salePrice}</span>
+            </div>
+
+            <div className={styles.option_wrap}>
+              <div className={styles.color_wrap}>
+                <span className={styles.txt}>Color</span>
+                <div className={styles.color}>
+                  <input type="radio" name="colorOption" id="orange" checked />
+                  <label htmlFor="orange">Orange</label>
+                </div>
+                <div className={styles.color}>
+                  <input type="radio" name="colorOption" id="green" />
+                  <label htmlFor="green">Green</label>
+                </div>
+                <div className={styles.color}>
+                  <input type="radio" name="colorOption" id="blue" />
+                  <label htmlFor="blue">Blue</label>
+                </div>
+                <div className={styles.color}>
+                  <input type="radio" name="colorOption" id="white" />
+                  <label htmlFor="white">White</label>
+                </div>
               </div>
-              <div>
-                <p>
-                  <span> How to measure your waist</span>
-                  Measure around the narrowest part of your natural waist,
-                  generally around the belly button. To ensure a comfortable
-                  fit, keep one finger between the measuring tape and your body.
-                </p>
+
+              <div className={styles.size_wrap}>
+                <span className={styles.txt}>Size</span>
+                <div className={styles.size}>
+                  <input type="radio" name="sizeOption" id="size-s" />
+                  <label htmlFor="size-s">S</label>
+                </div>
+                <div className={styles.size}>
+                  <input type="radio" name="sizeOption" id="size-m" />
+                  <label htmlFor="size-m">M</label>
+                </div>
+                <div className={styles.size}>
+                  <input type="radio" name="sizeOption" id="size-l" />
+                  <label htmlFor="size-l">L</label>
+                </div>
               </div>
-              <div>
-                <span>Shipping</span>
-                <p>Delivery in 3-5 working days.</p>
-                <span>Returns</span>
-                <p>
-                  You have 30 days from the shipping date to return your
-                  purchase
-                </p>
+            </div>
+
+            <div className={styles.tab_wrap}>
+              <div className={styles.tab_header}>
+                <button type="button">Description</button>
+                <button type="button">Size Guide</button>
+                <button type="button">Shipping</button>
+              </div>
+
+              <div className={styles.tab_content}>
+                <div>
+                  <p>
+                    A knit mini dress featuring a mock neck, allover sequin
+                    embellishments, long sleeves, and bodycon silhouette.
+                  </p>
+                  <span>Content + Care</span>
+                  <ul>
+                    <li>Shell: 75% polyester, 25% metallic yarn</li>
+                    <li>Lining 1: 95% polyester, 5% spandex</li>
+                    <li>Lining 2: 100% polyester</li>
+                    <li>Hand wash cold</li>
+                  </ul>
+                </div>
+                <div>
+                  <p>
+                    <span> How to measure your waist</span>
+                    Measure around the narrowest part of your natural waist,
+                    generally around the belly button. To ensure a comfortable
+                    fit, keep one finger between the measuring tape and your
+                    body.
+                  </p>
+                </div>
+                <div>
+                  <span>Shipping</span>
+                  <p>Delivery in 3-5 working days.</p>
+                  <span>Returns</span>
+                  <p>
+                    You have 30 days from the shipping date to return your
+                    purchase
+                  </p>
+                </div>
               </div>
             </div>
           </div>

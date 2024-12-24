@@ -1,3 +1,7 @@
+.background_wrap {
+  background-color: #f4f1ed;
+}
+
 .wrap {
   display: flex;
   justify-content: space-between;
@@ -30,4 +34,52 @@
 .breadcrumb {
   color: #999;
   font-size: 12px;
+}
+
+.item_title {
+  display: block;
+  margin-top: 10px;
+  font-size: 22px;
+}
+
+.price_box {
+  margin-top: 10px;
+  .s_price {
+    margin-left: 10px;
+  }
+}
+
+.color_wrap,
+.size_wrap {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  .txt {
+    display: inline-block;
+    width: 30px;
+  }
+}
+
+.color,
+.size {
+  display: inline-block;
+  font-size: 0;
+  &:not(:first-child) {
+    margin-left: 10px;
+  }
+
+  input[type='radio'] {
+    display: none;
+
+    &:checked ~ label {
+      border-color: red;
+    }
+  }
+
+  label {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #d7d7d7;
+  }
 }
