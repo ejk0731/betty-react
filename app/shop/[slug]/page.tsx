@@ -37,7 +37,7 @@ export default function Category({ params }: { params: any }) {
   if (!item) {
     notFound();
   }
-  // console.log(item);
+
   const setImagePath = `${ITEM_IMAGE_PATH}${item.itemCategory}/${item.imagePath}`;
   return (
     <Layout>
@@ -95,20 +95,28 @@ export default function Category({ params }: { params: any }) {
               <div className={styles.color_wrap}>
                 <span className={styles.txt}>Color</span>
                 <div className={styles.color}>
-                  <input type="radio" name="colorOption" id="orange" checked />
-                  <label htmlFor="orange">Orange</label>
+                  <input type="radio" name="colorOption" id="orange" />
+                  <label htmlFor="orange" className={styles.orange}>
+                    Orange
+                  </label>
                 </div>
                 <div className={styles.color}>
                   <input type="radio" name="colorOption" id="green" />
-                  <label htmlFor="green">Green</label>
+                  <label htmlFor="green" className={styles.green}>
+                    Green
+                  </label>
                 </div>
                 <div className={styles.color}>
                   <input type="radio" name="colorOption" id="blue" />
-                  <label htmlFor="blue">Blue</label>
+                  <label htmlFor="blue" className={styles.blue}>
+                    Blue
+                  </label>
                 </div>
                 <div className={styles.color}>
                   <input type="radio" name="colorOption" id="white" />
-                  <label htmlFor="white">White</label>
+                  <label htmlFor="white" className={styles.white}>
+                    White
+                  </label>
                 </div>
               </div>
 
@@ -169,6 +177,13 @@ export default function Category({ params }: { params: any }) {
                   </p>
                 </div>
               </div>
+            </div>
+
+            <div className={styles.btn_wrap}>
+              <button type="button">Add to cart</button>
+              <button type="button" className={styles.btn_buy}>
+                Buy Now!
+              </button>
             </div>
           </div>
         </div>

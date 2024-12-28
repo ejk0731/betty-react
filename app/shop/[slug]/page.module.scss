@@ -44,6 +44,7 @@
 
 .price_box {
   margin-top: 10px;
+  font-size: 13px;
   .s_price {
     margin-left: 10px;
   }
@@ -54,10 +55,20 @@
   display: flex;
   align-items: center;
   padding: 10px 0;
+  border-top: 1px solid #d7d7d7;
   .txt {
     display: inline-block;
     width: 30px;
   }
+}
+
+.color_wrap {
+  margin-top: 15px;
+}
+
+.size_wrap {
+  border-top: none;
+  border-bottom: 1px solid #d7d7d7;
 }
 
 .color,
@@ -72,7 +83,7 @@
     display: none;
 
     &:checked ~ label {
-      border-color: red;
+      border: 2px solid black;
     }
   }
 
@@ -81,5 +92,61 @@
     width: 30px;
     height: 30px;
     border: 1px solid #d7d7d7;
+  }
+}
+
+.color label {
+  &.orange {
+    background-color: orange;
+  }
+  &.green {
+    background-color: green;
+  }
+  &.blue {
+    background-color: blue;
+  }
+  &.white {
+    background-color: white;
+  }
+}
+
+.size {
+  font-size: 12px;
+  label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d7d7d7;
+  }
+}
+
+.tab_header {
+  button {
+    color: #999;
+
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
+}
+
+.tab_content {
+  color: #666;
+  font-size: 13px;
+}
+
+.btn_wrap {
+  width: 100%;
+  margin-top: 20px;
+  button {
+    width: 50%;
+    padding: 10px 0;
+    border: 1px solid #000;
+    cursor: pointer;
+
+    &.btn_buy {
+      background-color: #000;
+      color: white;
+    }
   }
 }
