@@ -5,6 +5,8 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import styles from './page.module.scss';
 import Link from 'next/link';
+import { useState } from 'react';
+import InfoTab from '@/components/Shop/infoTab';
 
 interface IItemProps {
   itemNumber: string;
@@ -39,6 +41,7 @@ export default function Category({ params }: { params: any }) {
   }
 
   const setImagePath = `${ITEM_IMAGE_PATH}${item.itemCategory}/${item.imagePath}`;
+
   return (
     <Layout>
       <div className={styles.background_wrap}>
@@ -117,47 +120,7 @@ export default function Category({ params }: { params: any }) {
               </div>
             </div>
 
-            <div className={styles.tab_wrap}>
-              <div className={styles.tab_header}>
-                <button type="button">Description</button>
-                <button type="button">Size Guide</button>
-                <button type="button">Shipping</button>
-              </div>
-
-              <div className={styles.tab_content}>
-                <div>
-                  <p>
-                    A knit mini dress featuring a mock neck, allover sequin
-                    embellishments, long sleeves, and bodycon silhouette.
-                  </p>
-                  <span>Content + Care</span>
-                  <ul>
-                    <li>Shell: 75% polyester, 25% metallic yarn</li>
-                    <li>Lining 1: 95% polyester, 5% spandex</li>
-                    <li>Lining 2: 100% polyester</li>
-                    <li>Hand wash cold</li>
-                  </ul>
-                </div>
-                <div>
-                  <p>
-                    <span> How to measure your waist</span>
-                    Measure around the narrowest part of your natural waist,
-                    generally around the belly button. To ensure a comfortable
-                    fit, keep one finger between the measuring tape and your
-                    body.
-                  </p>
-                </div>
-                <div>
-                  <span>Shipping</span>
-                  <p>Delivery in 3-5 working days.</p>
-                  <span>Returns</span>
-                  <p>
-                    You have 30 days from the shipping date to return your
-                    purchase
-                  </p>
-                </div>
-              </div>
-            </div>
+            <InfoTab />
 
             <div className={styles.btn_wrap}>
               <button type="button">Add to cart</button>

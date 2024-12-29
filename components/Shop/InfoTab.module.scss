@@ -1,0 +1,16 @@
+.tab_header {
+  button {
+    color: #999;
+    cursor: pointer;
+
+    &:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
+}
+
+.tab_content {
+  margin-top: 10px;
+  color: #666;
+  font-size: 13px;
+}

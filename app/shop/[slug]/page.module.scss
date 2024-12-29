@@ -28,6 +28,8 @@
 }
 
 .info_wrap {
+  position: fixed;
+  right: 2%;
   width: 30%;
   padding-left: 30px;
 }
@@ -119,21 +121,6 @@
     align-items: center;
     background-color: #d7d7d7;
   }
-}
-
-.tab_header {
-  button {
-    color: #999;
-
-    &:not(:first-child) {
-      margin-left: 10px;
-    }
-  }
-}
-
-.tab_content {
-  color: #666;
-  font-size: 13px;
 }
 
 .btn_wrap {
