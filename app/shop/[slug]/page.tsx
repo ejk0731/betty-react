@@ -45,36 +45,16 @@ export default function Category({ params }: { params: any }) {
         <div className={styles.wrap}>
           <div className={styles.image_wrap}>
             <div className={styles.img_box}>
-              <Image
-                src={setImagePath}
-                fill
-                alt={item.itemTitle}
-                objectFit="cover"
-              />
+              <Image src={setImagePath} fill alt={item.itemTitle} />
             </div>
             <div className={styles.img_box}>
-              <Image
-                src={setImagePath}
-                fill
-                alt={item.itemTitle}
-                objectFit="cover"
-              />
+              <Image src={setImagePath} fill alt={item.itemTitle} />
             </div>
             <div className={styles.img_box}>
-              <Image
-                src={setImagePath}
-                fill
-                alt={item.itemTitle}
-                objectFit="cover"
-              />
+              <Image src={setImagePath} fill alt={item.itemTitle} />
             </div>
             <div className={styles.img_box}>
-              <Image
-                src={setImagePath}
-                fill
-                alt={item.itemTitle}
-                objectFit="cover"
-              />
+              <Image src={setImagePath} fill alt={item.itemTitle} />
             </div>
           </div>
           <div className={styles.info_wrap}>
