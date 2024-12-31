@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import styles from './page.module.scss';
 import Link from 'next/link';
-import { useState } from 'react';
-import InfoTab from '@/components/Shop/infoTab';
+import InfoTab from '@/components/Shop/InfoTab';
+import Options from '@/components/Shop/Options';
 
 interface IItemProps {
   itemNumber: string;
@@ -74,51 +74,7 @@ export default function Category({ params }: { params: any }) {
               <span className={styles.s_price}>KRW{item.salePrice}</span>
             </div>
 
-            <div className={styles.option_wrap}>
-              <div className={styles.color_wrap}>
-                <span className={styles.txt}>Color</span>
-                <div className={styles.color}>
-                  <input type="radio" name="colorOption" id="orange" />
-                  <label htmlFor="orange" className={styles.orange}>
-                    Orange
-                  </label>
-                </div>
-                <div className={styles.color}>
-                  <input type="radio" name="colorOption" id="green" />
-                  <label htmlFor="green" className={styles.green}>
-                    Green
-                  </label>
-                </div>
-                <div className={styles.color}>
-                  <input type="radio" name="colorOption" id="blue" />
-                  <label htmlFor="blue" className={styles.blue}>
-                    Blue
-                  </label>
-                </div>
-                <div className={styles.color}>
-                  <input type="radio" name="colorOption" id="white" />
-                  <label htmlFor="white" className={styles.white}>
-                    White
-                  </label>
-                </div>
-              </div>
-
-              <div className={styles.size_wrap}>
-                <span className={styles.txt}>Size</span>
-                <div className={styles.size}>
-                  <input type="radio" name="sizeOption" id="size-s" />
-                  <label htmlFor="size-s">S</label>
-                </div>
-                <div className={styles.size}>
-                  <input type="radio" name="sizeOption" id="size-m" />
-                  <label htmlFor="size-m">M</label>
-                </div>
-                <div className={styles.size}>
-                  <input type="radio" name="sizeOption" id="size-l" />
-                  <label htmlFor="size-l">L</label>
-                </div>
-              </div>
-            </div>
+            <Options />
 
             <InfoTab />
 
