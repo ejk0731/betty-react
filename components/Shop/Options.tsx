@@ -1,15 +1,22 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, {
+  EventHandler,
+  InputHTMLAttributes,
+  useEffect,
+  useState,
+} from 'react';
 import styles from './Options.module.scss';
 
 export default function Options() {
   const [colorVal, setColorVal] = useState<string>('');
   const [sizeVal, setSizeVal] = useState<string>('');
 
-  const handleColorVal = (val: string) => {
+  const handleColorVal = (e: React.ChangeEvent) => {
+    const val = e.target.id;
     setColorVal(val);
   };
-  const handleSizeVal = (val: string) => {
+  const handleSizeVal = (e: React.ChangeEvent) => {
+    const val = e.target.id;
     setSizeVal(val);
   };
 
@@ -26,7 +33,7 @@ export default function Options() {
             type="radio"
             name="colorOption"
             id="orange"
-            onChange={e => handleColorVal(e.target.id)}
+            onChange={handleColorVal}
           />
           <label htmlFor="orange" className={styles.orange}>
             Orange
@@ -37,7 +44,7 @@ export default function Options() {
             type="radio"
             name="colorOption"
             id="green"
-            onChange={e => handleColorVal(e.target.id)}
+            onChange={handleColorVal}
           />
           <label htmlFor="green" className={styles.green}>
             Green
@@ -48,7 +55,7 @@ export default function Options() {
             type="radio"
             name="colorOption"
             id="blue"
-            onChange={e => handleColorVal(e.target.id)}
+            onChange={handleColorVal}
           />
           <label htmlFor="blue" className={styles.blue}>
             Blue
@@ -59,7 +66,7 @@ export default function Options() {
             type="radio"
             name="colorOption"
             id="white"
-            onChange={e => handleColorVal(e.target.id)}
+            onChange={handleColorVal}
           />
           <label htmlFor="white" className={styles.white}>
             White
@@ -74,7 +81,7 @@ export default function Options() {
             type="radio"
             name="sizeOption"
             id="size-s"
-            onChange={e => handleSizeVal(e.target.id)}
+            onChange={handleSizeVal}
           />
           <label htmlFor="size-s">S</label>
         </div>
@@ -83,7 +90,7 @@ export default function Options() {
             type="radio"
             name="sizeOption"
             id="size-m"
-            onChange={e => handleSizeVal(e.target.id)}
+            onChange={handleSizeVal}
           />
           <label htmlFor="size-m">M</label>
         </div>
@@ -92,7 +99,7 @@ export default function Options() {
             type="radio"
             name="sizeOption"
             id="size-l"
-            onChange={e => handleSizeVal(e.target.id)}
+            onChange={handleSizeVal}
           />
           <label htmlFor="size-l">L</label>
         </div>
