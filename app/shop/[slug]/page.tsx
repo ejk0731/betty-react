@@ -64,7 +64,9 @@ export default function Category({ params }: { params: any }) {
             <div className={styles.breadcrumb}>
               <Link href={'/'}>Home</Link> &gt;
               <Link href={'/shop'}> Shop</Link> &gt;
-              <Link href={'/shop'}> {item.itemCategory}</Link>
+              <Link href={'/shop'} className={styles.category}>
+                {item.itemCategory}
+              </Link>
             </div>
 
             <b className={styles.item_title}>{item.itemTitle}</b>
