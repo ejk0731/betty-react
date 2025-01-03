@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Oswald } from 'next/font/google';
 import './styles/globals.scss';
-import RecoilContextProvider from './recoilContextProvider';
+import RecoilContextProvider from '../components/RecoilContextProvider';
 
 const oswald = Oswald({ subsets: ['latin'] });
 

@@ -1,13 +1,11 @@
 'use client';
-import React, {
-  EventHandler,
-  InputHTMLAttributes,
-  useEffect,
-  useState,
-} from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Options.module.scss';
+import { useSetRecoilState } from 'recoil';
+import { optionState } from '@/lib/states/cartState';
 
 export default function Options() {
+  const setOptionState = useSetRecoilState(optionState);
   const [colorVal, setColorVal] = useState<string>('');
   const [sizeVal, setSizeVal] = useState<string>('');
 
@@ -22,6 +20,11 @@ export default function Options() {
 
   useEffect(() => {
     console.log(colorVal, sizeVal);
+    if (colorVal && sizeVal) {
+      setOptionState(true);
+    } else {
+      setOptionState(false);
+    }
   }, [colorVal, sizeVal]);
 
   return (
