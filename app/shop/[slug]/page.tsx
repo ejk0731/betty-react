@@ -7,6 +7,7 @@ import styles from './page.module.scss';
 import Link from 'next/link';
 import InfoTab from '@/components/Shop/InfoTab';
 import Options from '@/components/Shop/Options';
+import BtnAddToCart from '@/components/Shop/BtnAddToCart';
 
 interface IItemProps {
   itemNumber: string;
@@ -81,7 +82,7 @@ export default function Category({ params }: { params: any }) {
             <InfoTab />
 
             <div className={styles.btn_wrap}>
-              <button type="button">Add to cart</button>
+              <BtnAddToCart />
               <button type="button" className={styles.btn_buy}>
                 Buy Now!
               </button>

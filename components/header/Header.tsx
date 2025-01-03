@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styles from './Header.module.scss';
 import NavLink from './NavLink';
+import Cart from './Cart';
 
 export default function Header() {
   return (
@@ -61,7 +62,7 @@ export default function Header() {
           </li>
           <li className={styles.sub_nav_item}>
             <button type="button">
-              CART(<span>0</span>)
+              <Cart />
             </button>
           </li>
         </ul>

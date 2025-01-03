@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Oswald } from 'next/font/google';
 import './styles/globals.scss';
+import RecoilContextProvider from './recoilContextProvider';
 
 const oswald = Oswald({ subsets: ['latin'] });
 
@@ -16,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html className={`${oswald.className}`}>
-      <body>{children}</body>
+      <body>
+        <RecoilContextProvider>{children}</RecoilContextProvider>
+      </body>
     </html>
   );
 }
