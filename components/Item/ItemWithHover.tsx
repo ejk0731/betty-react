@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import styles from './BestItem.module.scss';
+import styles from './ItemWithHover.module.scss';
 import imgBestItem from '@/public/images/best/4.jpg';
 import Image from 'next/image';
 import Colors from './infos/Colors';
