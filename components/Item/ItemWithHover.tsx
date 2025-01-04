@@ -1,29 +1,45 @@
 import Link from 'next/link';
 import React from 'react';
 import styles from './ItemWithHover.module.scss';
-import imgBestItem from '@/public/images/best/4.jpg';
 import Image from 'next/image';
 import Colors from './infos/Colors';
+import { ITEM_IMAGE_PATH } from '@/lib/constants/url';
+import { IItemInfos } from '@/lib/types/item';
 
-interface IItemWithHoverProps {
+interface IItemWithHoverProps extends IItemInfos {
   showTopTitle?: boolean;
   topTitleNumber?: number;
+  category?: string;
+  imageUrl?: number;
 }
 
 export default function ItemWithHover({
   showTopTitle = false,
   topTitleNumber,
+  itemCategory,
+  itemSlug,
+  itemTitle,
+  originalPrice,
+  salePrice,
+  itemColors,
+  itemColorValues,
+  imagePath,
 }: IItemWithHoverProps) {
   const topTitle = `Best 0${topTitleNumber}.`;
+  const setImagePath = `${ITEM_IMAGE_PATH}${itemCategory}/${imagePath}`;
   return (
-    <Link href={'/shop'} scroll={false} className={styles.item}>
+    <Link
+      href={`/shop/${itemCategory}/${itemSlug}`}
+      scroll={false}
+      className={styles.item}
+    >
       {showTopTitle && <b className={styles.num}>{topTitle}</b>}
-      <Image src={imgBestItem} alt="" width={100} />
+      <Image src={setImagePath} alt="" fill />
       <div className={styles.info_wrap}>
         <Colors align="center" />
-        <span className={styles.title}>title</span>
-        <s className={styles.price}>50000</s>
-        <span className={styles.price}>35000</span>
+        <span className={styles.title}>{itemTitle}</span>
+        <s className={styles.price}>{originalPrice}</s>
+        <span className={styles.price}>{salePrice}</span>
       </div>
     </Link>
   );

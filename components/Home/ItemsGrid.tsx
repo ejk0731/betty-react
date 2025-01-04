@@ -13,10 +13,10 @@ export default function ItemsGrid({
     <div className={styles.wrap}>
       <span className={styles.title}>{title}</span>
       <ul className={styles.item_wrap}>
-        {items.slice(0, 9).map((item: any) => {
+        {items.slice(0, 9).map((item: any, index: number) => {
           return (
             <li key={item.id} className={styles.item}>
-              <ItemWithHover {...item} />
+              <ItemWithHover {...item} category="new" imageUrl={index + 1} />
             </li>
           );
         })}

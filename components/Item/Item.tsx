@@ -3,6 +3,11 @@ import Link from 'next/link';
 import React from 'react';
 import styles from './Item.module.scss';
 import Colors from './infos/Colors';
+import { IItemInfos } from '@/lib/types/item';
+
+// type Props = {
+//   data: IItemInfos[] | undefined;
+// };
 
 export default function Items({
   itemNumber,
@@ -14,17 +19,7 @@ export default function Items({
   itemColors,
   itemColorValues,
   imagePath,
-}: {
-  itemNumber: string;
-  itemCategory: string;
-  itemSlug: string;
-  itemTitle: string;
-  originalPrice: number;
-  salePrice: number;
-  itemColors: string;
-  itemColorValues: string;
-  imagePath: string;
-}) {
+}: IItemInfos) {
   const setImagePath = `/images/${itemCategory}/${imagePath}`;
   return (
     <Link

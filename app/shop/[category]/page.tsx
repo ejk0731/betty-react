@@ -7,6 +7,7 @@ import BestItemGrid from '@/components/Item/BestItemGrid';
 import Layout from '@/components/Layout/Layout';
 import { Metadata } from 'next';
 import { CategoryItems } from '@/components/Item/CategoryItems';
+import { BestCategoryItems } from '@/components/Item/BestCategoryItems';
 
 export const metadata: Metadata = {
   title: 'Shop Items',
@@ -18,8 +19,8 @@ export default function ShopCategory({ params }: { params: any }) {
     <Layout>
       <div className={styles.wrap}>
         <SubNav />
-        <BestItemGrid />
         <Suspense fallback={<div>loading...</div>}>
+          <BestCategoryItems category={params.category} />
           <CategoryItems category={params.category} />
         </Suspense>
       </div>
