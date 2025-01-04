@@ -5,17 +5,25 @@ import Link from 'next/link';
 
 export default function SubNav() {
   const categories = [
-    'New Arrivals',
-    'Outerwear',
-    'Top',
-    'Bottom',
-    'Dress',
-    'Accessories',
+    {
+      displayName: 'New Arrivals',
+      urlName: 'new',
+    },
+    {
+      displayName: 'Outerwear',
+      urlName: 'outerwear',
+    },
+    {
+      displayName: 'Top',
+      urlName: 'top',
+    },
   ];
+
   const [activeCategory, setActiveCategory] = useState<string>('New Arrivals');
   const handleClickCategory = (category: string) => {
     setActiveCategory(category);
   };
+
   return (
     <div className={styles.sub_nav}>
       <b>{activeCategory}</b>
@@ -24,11 +32,11 @@ export default function SubNav() {
           return (
             <li key={index}>
               <Link
-                href={'/shop'}
+                href={`/shop/${category.urlName}`}
                 scroll={false}
-                onClick={() => handleClickCategory(category)}
+                onClick={() => handleClickCategory(category.displayName)}
               >
-                {category}
+                {category.displayName}
               </Link>
             </li>
           );

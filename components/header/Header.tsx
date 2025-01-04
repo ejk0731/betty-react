@@ -14,7 +14,7 @@ export default function Header() {
           <nav>
             <ul className={styles.main_nav}>
               <li className={styles.main_nav_item}>
-                <NavLink href={'/shop'}>SHOP</NavLink>
+                <NavLink href={'/shop/new'}>SHOP</NavLink>
 
                 <ul className={styles.sub_nav} style={{ display: 'none' }}>
                   <li className={styles.sub_nav_item}>
