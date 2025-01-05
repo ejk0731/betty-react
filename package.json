@@ -16,6 +16,7 @@
     "react-dom": "^18",
     "recoil": "^0.7.7",
     "slugify": "^1.6.6",
+    "swiper": "^11.2.0",
     "xss": "^1.0.15"
   },
   "devDependencies": {

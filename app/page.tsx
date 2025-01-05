@@ -4,6 +4,7 @@ import Collection from '@/components/Home/Collection';
 import ItemsGrid from '@/components/Home/ItemsGrid';
 import { getItems } from '@/lib/apis/items';
 import { Suspense } from 'react';
+import LookBook from '@/components/Home/LookBooks/LookBooks';
 
 async function Items() {
   const items = await getItems();
@@ -18,6 +19,7 @@ export default function Home() {
       <Suspense fallback={<div>Loading..</div>}>
         <Items />
       </Suspense>
+      <LookBook />
     </Layout>
   );
 }
