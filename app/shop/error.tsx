@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 
-export default function error() {
+export default function Error() {
   return (
     <main>
       <h1>An error occurred!</h1>

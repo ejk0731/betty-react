@@ -19,7 +19,7 @@ export default function Home() {
       <Suspense fallback={<div>Loading..</div>}>
         <Items />
       </Suspense>
-      <LookBook />
+      {/* <LookBook /> */}
     </Layout>
   );
 }

@@ -77,9 +77,9 @@ export default function Category({ params }: { params: any }) {
               <span className={styles.s_price}>KRW{item.salePrice}</span>
             </div>
 
-            <Options />
-
             <InfoTab />
+
+            <Options />
 
             <div className={styles.btn_wrap}>
               <BtnAddToCart />
