@@ -19,7 +19,7 @@ export default function Options() {
   };
 
   useEffect(() => {
-    console.log(colorVal, sizeVal);
+    // console.log(colorVal, sizeVal);
     if (colorVal && sizeVal) {
       setOptionState(true);
     } else {

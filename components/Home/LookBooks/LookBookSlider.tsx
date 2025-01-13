@@ -10,7 +10,7 @@ export default function LookBookSlider() {
     <div>
       <Swiper spaceBetween={50} slidesPerView={3}>
         {item.map(index => {
-          return <LookBookSlide index={index} />;
+          return <LookBookSlide index={index} key={index} />;
         })}
       </Swiper>
     </div>

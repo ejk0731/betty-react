@@ -1,9 +1,6 @@
 import styles from './page.module.scss';
-import { getCategoryItems, getItems } from '@/lib/apis/items';
-import ItemsGrid from '@/components/Item/ItemsGrid';
 import SubNav from '@/components/Header/SubNav';
 import { Suspense } from 'react';
-import BestItemGrid from '@/components/Item/BestItemGrid';
 import Layout from '@/components/Layout/Layout';
 import { Metadata } from 'next';
 import { CategoryItems } from '@/components/Item/CategoryItems';

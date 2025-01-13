@@ -13,14 +13,14 @@ export default function ImagePicker({
   const [pickedImage, setPickedImage] = useState<any>(null);
   const imageInputRef = useRef<HTMLInputElement | null>(null);
   function handleClickBtn() {
-    console.log(imageInputRef.current);
+    // console.log(imageInputRef.current);
     if (imageInputRef.current) {
       imageInputRef.current.click();
     }
   }
   function handleChangeImage(event: any) {
     const file = event.target.files[0];
-    console.log(file);
+    // console.log(file);
 
     if (!file) {
       setPickedImage(null);

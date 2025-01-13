@@ -1,6 +1,6 @@
 'use client';
 import React, { useState } from 'react';
-import styles from './infoTab.module.scss';
+import styles from './InfoTab.module.scss';
 
 export default function InfoTab() {
   const [tabCont, setTabCont] = useState<number>(0);

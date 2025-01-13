@@ -9,7 +9,7 @@ function isInvalidText(text: string) {
 }
 
 export async function sendFaq(prevState: any, formData: any) {
-  console.log(formData);
+  // console.log(formData);
 
   const faq = {
     name: formData.get('name'),
