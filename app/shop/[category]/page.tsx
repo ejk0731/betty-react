@@ -5,6 +5,7 @@ import Layout from '@/components/Layout/Layout';
 import { Metadata } from 'next';
 import { CategoryItems } from '@/components/Item/CategoryItems';
 import { BestCategoryItems } from '@/components/Item/BestCategoryItems';
+import Loading from '../loading';
 
 export const metadata: Metadata = {
   title: 'Shop Items',
@@ -17,7 +18,20 @@ export default function ShopCategory({ params }: { params: any }) {
     <Layout>
       <div className={styles.wrap}>
         <SubNav />
-        <Suspense fallback={<div>loading...</div>}>
+        <Suspense
+          fallback={
+            <div
+              style={{
+                width: '100%',
+                height: '1000px',
+                marginTop: '300px',
+                textAlign: 'center',
+              }}
+            >
+              loading...
+            </div>
+          }
+        >
           <BestCategoryItems category={params.category} />
           <CategoryItems category={params.category} />
         </Suspense>

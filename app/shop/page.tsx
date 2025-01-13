@@ -16,7 +16,20 @@ export default function ShopCategory() {
     <Layout>
       <div className={styles.wrap}>
         <SubNav />
-        <Suspense fallback={<div>loading...</div>}>
+        <Suspense
+          fallback={
+            <div
+              style={{
+                width: '100%',
+                height: '1000px',
+                marginTop: '300px',
+                textAlign: 'center',
+              }}
+            >
+              loading...
+            </div>
+          }
+        >
           <BestCategoryItems category={'new'} />
           <CategoryItems category={'new'} />
         </Suspense>
