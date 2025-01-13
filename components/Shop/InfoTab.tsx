@@ -4,16 +4,31 @@ import styles from './InfoTab.module.scss';
 
 export default function InfoTab() {
   const [tabCont, setTabCont] = useState<number>(0);
+
   return (
     <div className={styles.tab_wrap}>
       <div className={styles.tab_header}>
-        <button type="button" onClick={() => setTabCont(0)}>
+        <button
+          type="button"
+          className={`${tabCont === 0 && styles.active}`}
+          onClick={() => setTabCont(0)}
+        >
           Description
         </button>
-        <button type="button" onClick={() => setTabCont(1)}>
+
+        <button
+          type="button"
+          onClick={() => setTabCont(1)}
+          className={`${tabCont === 1 && styles.active}`}
+        >
           Size Guide
         </button>
-        <button type="button" onClick={() => setTabCont(2)}>
+
+        <button
+          type="button"
+          onClick={() => setTabCont(2)}
+          className={`${tabCont === 2 && styles.active}`}
+        >
           Shipping
         </button>
       </div>

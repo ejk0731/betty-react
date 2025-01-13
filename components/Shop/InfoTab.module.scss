@@ -7,6 +7,10 @@
     &:not(:first-child) {
       margin-left: 10px;
     }
+
+    &.active {
+      border-bottom: 1px solid #999;
+    }
   }
 }
 
