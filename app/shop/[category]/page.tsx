@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 };
 
 export default function ShopCategory({ params }: { params: any }) {
-  console.log(params);
+  // console.log(params);
   return (
     <Layout>
       <div className={styles.wrap}>
