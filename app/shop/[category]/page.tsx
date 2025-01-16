@@ -15,9 +15,8 @@ export const metadata: Metadata = {
 export default async function ShopCategory({
   params,
 }: {
-  params: Promise<{ category: string }>;
+  params: { category: string };
 }) {
-  const category = (await params).category;
   return (
     <Layout>
       <div className={styles.wrap}>
@@ -36,8 +35,8 @@ export default async function ShopCategory({
             </div>
           }
         >
-          <BestCategoryItems category={category} />
-          <CategoryItems category={category} />
+          <BestCategoryItems category={params.category} />
+          <CategoryItems category={params.category} />
         </Suspense>
       </div>
     </Layout>
