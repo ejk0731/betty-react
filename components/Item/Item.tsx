@@ -22,10 +22,7 @@ export default function Items({
 }: IItemInfos) {
   const setImagePath = `/images/${itemCategory}/${imagePath}`;
   return (
-    <Link
-      href={`/shop/${itemCategory}/${itemSlug}`}
-      className={styles.item_wrap}
-    >
+    <Link href={`/product/${itemSlug}`} className={styles.item_wrap}>
       <Image src={setImagePath} alt={itemTitle} width={200} height={400} />
       <Colors align="left" />
       <b className={styles.title}>{itemTitle}</b>

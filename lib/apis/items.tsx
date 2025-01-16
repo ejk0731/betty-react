@@ -13,6 +13,7 @@ export async function getCategoryItems(category: string) {
   return db.prepare('SELECT * FROM items WHERE itemCategory = ?').all(category);
 }
 
-export function getSlug(slug: string) {
+export async function getSlug(slug: string) {
+  await new Promise(resolve => setTimeout(resolve, 1000));
   return db.prepare('SELECT * FROM items WHERE itemSlug = ?').get(slug);
 }

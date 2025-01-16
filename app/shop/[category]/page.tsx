@@ -12,8 +12,12 @@ export const metadata: Metadata = {
   description: 'Browse the items in our shop',
 };
 
-export default function ShopCategory({ params }: { params: any }) {
-  // console.log(params);
+export default async function ShopCategory({
+  params,
+}: {
+  params: Promise<{ category: string }>;
+}) {
+  const category = (await params).category;
   return (
     <Layout>
       <div className={styles.wrap}>
@@ -32,8 +36,8 @@ export default function ShopCategory({ params }: { params: any }) {
             </div>
           }
         >
-          <BestCategoryItems category={params.category} />
-          <CategoryItems category={params.category} />
+          <BestCategoryItems category={category} />
+          <CategoryItems category={category} />
         </Suspense>
       </div>
     </Layout>

@@ -21,8 +21,13 @@ interface IItemProps {
   imagePath: string;
 }
 
-export async function generateMetadata({ params }: { params: any }) {
-  const item = getSlug(params.slug) as IItemProps;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const slug = (await params).slug;
+  const item = (await getSlug(slug)) as IItemProps;
 
   if (!item) {
     notFound();
@@ -34,8 +39,13 @@ export async function generateMetadata({ params }: { params: any }) {
   };
 }
 
-export default function Category({ params }: { params: any }) {
-  const item = getSlug(params.slug) as IItemProps;
+export default async function ProductDetails({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const slug = (await params).slug;
+  const item = (await getSlug(slug)) as IItemProps;
 
   if (!item) {
     notFound();
