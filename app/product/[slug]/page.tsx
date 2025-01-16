@@ -55,7 +55,10 @@ export default async function ProductDetails({
 
   return (
     <Layout>
-      <div className={styles.background_wrap}>
+      {slug}
+      {item.itemCategory}
+      {item.itemTitle}
+      {/* <div className={styles.background_wrap}>
         <div className={styles.wrap}>
           <div className={styles.image_wrap}>
             <div className={styles.img_box}>
@@ -99,7 +102,7 @@ export default async function ProductDetails({
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </Layout>
   );
 }

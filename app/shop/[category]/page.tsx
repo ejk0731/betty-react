@@ -37,7 +37,7 @@ export default async function ShopCategory({
           }
         >
           <BestCategoryItems category={category} />
-          <CategoryItems category={category} />
+          {/* <CategoryItems category={category} /> */}
         </Suspense>
       </div>
     </Layout>
