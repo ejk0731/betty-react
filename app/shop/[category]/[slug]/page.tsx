@@ -21,7 +21,11 @@ interface IItemProps {
   imagePath: string;
 }
 
-export async function generateMetadata({ params }: { params: any }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const item = getSlug(params.slug) as IItemProps;
 
   if (!item) {
@@ -34,7 +38,7 @@ export async function generateMetadata({ params }: { params: any }) {
   };
 }
 
-export default function Category({ params }: { params: any }) {
+export default function Category({ params }: { params: { slug: string } }) {
   const item = getSlug(params.slug) as IItemProps;
 
   if (!item) {
