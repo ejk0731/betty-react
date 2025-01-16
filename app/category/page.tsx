@@ -30,8 +30,8 @@ export default function ShopCategory() {
             </div>
           }
         >
-          <BestCategoryItems category={'new'} />
-          <CategoryItems category={'new'} />
+          <BestCategoryItems category={'outerwear'} />
+          <CategoryItems category={'outerwear'} />
         </Suspense>
       </div>
     </Layout>

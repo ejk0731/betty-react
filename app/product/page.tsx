@@ -21,12 +21,8 @@ interface IItemProps {
   imagePath: string;
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const item = getSlug(params.slug) as IItemProps;
+export async function generateMetadata() {
+  const item = getSlug('new-title-1') as IItemProps;
 
   if (!item) {
     notFound();
@@ -38,8 +34,8 @@ export async function generateMetadata({
   };
 }
 
-export default function Category({ params }: { params: { slug: string } }) {
-  const item = getSlug(params.slug) as IItemProps;
+export default function Category() {
+  const item = getSlug('new-title-1') as IItemProps;
 
   if (!item) {
     notFound();
