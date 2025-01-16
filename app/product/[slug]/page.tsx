@@ -22,23 +22,24 @@ interface IItemProps {
   imagePath: string;
 }
 
-export async function generateMetadata() {
-  const item = (await getSlug('new-title-1')) as IItemProps;
+// export async function generateMetadata() {
+//   const item = (await getSlug('new-title-1')) as IItemProps;
 
-  if (!item) {
-    notFound();
-  }
+//   if (!item) {
+//     notFound();
+//   }
 
-  return {
-    title: item.itemTitle,
-    description: item.itemCategory,
-  };
-}
+//   return {
+//     title: item.itemTitle,
+//     description: item.itemCategory,
+//   };
+// }
 
 export default async function ProductDetails() {
   const item = (await getSlug('new-title-1')) as IItemProps;
 
   if (!item) return notFound();
+  console.log(item);
 
   const setImagePath = `${ITEM_IMAGE_PATH}${item.itemCategory}/${item.imagePath}`;
 

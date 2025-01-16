@@ -12,14 +12,9 @@ export const metadata: Metadata = {
   description: 'Browse the items in our shop',
 };
 
-export default async function ShopCategory({
-  params,
-}: {
-  params: { category: string };
-}) {
+export default async function ShopCategory() {
   return (
     <Layout>
-      {params.category}
       <div className={styles.wrap}>
         <SubNav />
         <Suspense
