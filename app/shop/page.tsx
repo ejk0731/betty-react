@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   description: 'Browse the items in our shop',
 };
 
-export default function ShopCategory() {
+export default function Shop() {
   return (
     <Layout>
       <div className={styles.wrap}>
