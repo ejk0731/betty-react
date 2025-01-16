@@ -13,7 +13,23 @@ export async function getCategoryItems(category: string) {
   return db.prepare('SELECT * FROM items WHERE itemCategory = ?').all(category);
 }
 
+// export async function getSlug(slug: string) {
+//   await new Promise(resolve => setTimeout(resolve, 1000));
+//   return db.prepare('SELECT * FROM items WHERE itemSlug = ?').get(slug);
+// }
+
 export async function getSlug(slug: string) {
-  await new Promise(resolve => setTimeout(resolve, 1000));
-  return db.prepare('SELECT * FROM items WHERE itemSlug = ?').get(slug);
+  try {
+    const item = db.prepare('SELECT * FROM items WHERE itemSlug = ?').get(slug);
+
+    if (!item) {
+      console.log(`No item found for slug: ${slug}`);
+      return null;
+    }
+
+    return item;
+  } catch (error) {
+    console.error('Error fetching item from database:', error);
+    return null;
+  }
 }
