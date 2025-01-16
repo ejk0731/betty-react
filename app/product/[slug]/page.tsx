@@ -24,13 +24,13 @@ interface IItemProps {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }) {
-  const slug = (await params).slug;
+  const { slug } = params;
   const item = (await getSlug(slug)) as IItemProps;
 
   if (!item) {
-    notFound();
+    notFound(); // Will trigger a 404 page
   }
 
   return {
@@ -42,23 +42,23 @@ export async function generateMetadata({
 export default async function ProductDetails({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: { slug: string };
 }) {
-  const slug = (await params).slug;
+  const { slug } = params;
+
+  // Fetch item data asynchronously
   const item = (await getSlug(slug)) as IItemProps;
 
+  // Handle case where the item does not exist
   if (!item) {
-    notFound();
+    notFound(); // Will trigger a 404 page
   }
 
   const setImagePath = `${ITEM_IMAGE_PATH}${item.itemCategory}/${item.imagePath}`;
 
   return (
     <Layout>
-      {slug}
-      {item.itemCategory}
-      {item.itemTitle}
-      {/* <div className={styles.background_wrap}>
+      <div className={styles.background_wrap}>
         <div className={styles.wrap}>
           <div className={styles.image_wrap}>
             <div className={styles.img_box}>
@@ -102,7 +102,7 @@ export default async function ProductDetails({
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </Layout>
   );
 }
