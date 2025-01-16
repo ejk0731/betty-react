@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: 'Browse the items in our shop',
 };
 
-export async function ShopCategory({
+export default async function ShopCategory({
   params,
 }: {
   params: Promise<{ category: string }>;
