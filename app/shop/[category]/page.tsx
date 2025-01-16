@@ -12,7 +12,11 @@ export const metadata: Metadata = {
   description: 'Browse the items in our shop',
 };
 
-export default function ShopCategory(params: { category: string }) {
+export default function ShopCategory({
+  params,
+}: {
+  params: { category: string };
+}) {
   return (
     <Layout>
       <div className={styles.wrap}>
