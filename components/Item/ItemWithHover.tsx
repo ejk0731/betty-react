@@ -28,11 +28,7 @@ export default function ItemWithHover({
   const topTitle = `Best 0${topTitleNumber}.`;
   const setImagePath = `${ITEM_IMAGE_PATH}${itemCategory}/${imagePath}`;
   return (
-    <Link
-      href={`/shop/${itemCategory}/${itemSlug}`}
-      scroll={false}
-      className={styles.item}
-    >
+    <Link href={`/product`} scroll={false} className={styles.item}>
       {showTopTitle && <b className={styles.num}>{topTitle}</b>}
       <Image src={setImagePath} alt="" fill />
       <div className={styles.info_wrap}>
