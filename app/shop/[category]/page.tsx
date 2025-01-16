@@ -13,26 +13,20 @@ export const metadata: Metadata = {
   description: 'Browse the items in our shop',
 };
 
-async function Items({ category }: { category: string }) {
-  const items = await getCategoryItems(category);
+async function Items() {
+  const items = await getCategoryItems('outerwear');
   return (
     <>
-      <BestCategoryItems category={category} />
-      <CategoryItems category={category} />
+      <BestCategoryItems category={'outerwear'} />
+      <CategoryItems category={'outerwear'} />
     </>
   );
 }
 
-export default function ShopCategory({
-  params,
-}: {
-  params: { category: string };
-}) {
-  const cate = params.category;
+export default function ShopCategory() {
   return (
     <Layout>
       <div className={styles.wrap}>
-        {params.category}
         <SubNav />
         <Suspense
           fallback={
@@ -48,7 +42,7 @@ export default function ShopCategory({
             </div>
           }
         >
-          <Items category={cate} />
+          <Items />
         </Suspense>
       </div>
     </Layout>
