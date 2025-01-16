@@ -46,7 +46,7 @@ export default function Header() {
               </li>
               <li className={styles.main_nav_item}>
                 {/* <button type="button">COMMUNITY</button> */}
-                <NavLink href={'/product/top-title-1'}>COMMUNITY</NavLink>
+                <NavLink href={'/product/new-title-1'}>COMMUNITY</NavLink>
               </li>
               {/* <li className={styles.main_nav_item}>
               <button type="button">MY ACCOUNT</button>

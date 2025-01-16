@@ -12,11 +12,12 @@ export const metadata: Metadata = {
   description: 'Browse the items in our shop',
 };
 
-export default async function ShopCategory() {
+export default async function ShopCategory(params: { slug: string }) {
   return (
     <Layout>
       <div className={styles.wrap}>
-        <SubNav />
+        {params.slug}
+        {/* <SubNav />
         <Suspense
           fallback={
             <div
@@ -33,7 +34,7 @@ export default async function ShopCategory() {
         >
           <BestCategoryItems category={'top'} />
           <CategoryItems category={'top'} />
-        </Suspense>
+        </Suspense> */}
       </div>
     </Layout>
   );

@@ -35,18 +35,19 @@ interface IItemProps {
 //   };
 // }
 
-export default async function ProductDetails() {
-  const item = (await getSlug('new-title-1')) as IItemProps;
+export default function ProductDetails() {
+  // const item = (await getSlug('new-title-1')) as IItemProps;
 
-  if (!item) return notFound();
-  console.log(item);
+  // if (!item) return notFound();
+  // console.log(item);
 
-  const setImagePath = `${ITEM_IMAGE_PATH}${item.itemCategory}/${item.imagePath}`;
+  // const setImagePath = `${ITEM_IMAGE_PATH}${item.itemCategory}/${item.imagePath}`;
 
   return (
     <Layout>
       <div className={styles.background_wrap}>
-        <div className={styles.wrap}>
+        yaaaaaaaa
+        {/* <div className={styles.wrap}>
           <div className={styles.image_wrap}>
             <div className={styles.img_box}>
               <Image src={setImagePath} fill alt={item.itemTitle} />
@@ -88,7 +89,7 @@ export default async function ProductDetails() {
               </button>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </Layout>
   );
