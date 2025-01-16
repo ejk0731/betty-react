@@ -12,11 +12,11 @@ export const metadata: Metadata = {
   description: 'Browse the items in our shop',
 };
 
-export default async function ShopCategory(params: { slug: string }) {
+export default function ShopCategory(params: { category: string }) {
   return (
     <Layout>
       <div className={styles.wrap}>
-        {params.slug}
+        {params.category}
         {/* <SubNav />
         <Suspense
           fallback={
