@@ -21,38 +21,31 @@ interface IItemProps {
   imagePath: string;
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
+// export async function generateMetadata({
+//   params,
+// }: {
+//   params: { slug: string };
+// }) {
+//   const { slug } = params;
+//   const item = (await getSlug(slug)) as IItemProps;
+
+//   if (!item) {
+//     notFound(); // Will trigger a 404 page
+//   }
+
+//   return {
+//     title: item.itemTitle,
+//     description: item.itemCategory,
+//   };
+// }
+
+export default async function ProductDetails(props: {
+  params: Promise<{ slug: string }>;
 }) {
-  const { slug } = params;
-  const item = (await getSlug(slug)) as IItemProps;
+  const params = await props.params;
+  const item = (await getSlug(params.slug)) as IItemProps;
 
-  if (!item) {
-    notFound(); // Will trigger a 404 page
-  }
-
-  return {
-    title: item.itemTitle,
-    description: item.itemCategory,
-  };
-}
-
-export default async function ProductDetails({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const { slug } = params;
-
-  // Fetch item data asynchronously
-  const item = (await getSlug(slug)) as IItemProps;
-
-  // Handle case where the item does not exist
-  if (!item) {
-    notFound(); // Will trigger a 404 page
-  }
+  if (!item) return notFound();
 
   const setImagePath = `${ITEM_IMAGE_PATH}${item.itemCategory}/${item.imagePath}`;
 
