@@ -19,6 +19,7 @@ export default async function ShopCategory({
 }) {
   return (
     <Layout>
+      {params.category}
       <div className={styles.wrap}>
         <SubNav />
         <Suspense
@@ -35,8 +36,8 @@ export default async function ShopCategory({
             </div>
           }
         >
-          <BestCategoryItems category={params.category} />
-          <CategoryItems category={params.category} />
+          <BestCategoryItems category={'top'} />
+          <CategoryItems category={'top'} />
         </Suspense>
       </div>
     </Layout>

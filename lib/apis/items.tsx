@@ -15,7 +15,7 @@ export async function getCategoryItems(category: string) {
 
 export async function getSlug(slug: string) {
   await new Promise(resolve => setTimeout(resolve, 1000));
-  return db.prepare('SELECT * FROM items WHERE itemSlug = ?').all(slug);
+  return db.prepare('SELECT * FROM items WHERE itemSlug = ?').get(slug);
 }
 
 // export async function getSlug(slug: string) {

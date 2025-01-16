@@ -8,6 +8,7 @@ import Link from 'next/link';
 import InfoTab from '@/components/Shop/InfoTab';
 import Options from '@/components/Shop/Options';
 import BtnAddToCart from '@/components/Shop/BtnAddToCart';
+import { IItemInfos } from '@/lib/types/item';
 
 interface IItemProps {
   itemNumber: string;
@@ -21,29 +22,21 @@ interface IItemProps {
   imagePath: string;
 }
 
-// export async function generateMetadata({
-//   params,
-// }: {
-//   params: { slug: string };
-// }) {
-//   const { slug } = params;
-//   const item = (await getSlug(slug)) as IItemProps;
+export async function generateMetadata() {
+  const item = (await getSlug('new-title-1')) as IItemProps;
 
-//   if (!item) {
-//     notFound(); // Will trigger a 404 page
-//   }
+  if (!item) {
+    notFound();
+  }
 
-//   return {
-//     title: item.itemTitle,
-//     description: item.itemCategory,
-//   };
-// }
+  return {
+    title: item.itemTitle,
+    description: item.itemCategory,
+  };
+}
 
-export default async function ProductDetails(props: {
-  params: Promise<{ slug: string }>;
-}) {
-  const params = await props.params;
-  const item = (await getSlug(params.slug)) as IItemProps;
+export default async function ProductDetails() {
+  const item = (await getSlug('new-title-1')) as IItemProps;
 
   if (!item) return notFound();
 
