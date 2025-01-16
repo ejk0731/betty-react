@@ -6,22 +6,34 @@ import { Metadata } from 'next';
 import { CategoryItems } from '@/components/Item/CategoryItems';
 import { BestCategoryItems } from '@/components/Item/BestCategoryItems';
 import Loading from '../loading';
+import { getCategoryItems } from '@/lib/apis/items';
 
 export const metadata: Metadata = {
   title: 'Shop Items',
   description: 'Browse the items in our shop',
 };
 
+async function Items({ category }: { category: string }) {
+  const items = await getCategoryItems(category);
+  return (
+    <>
+      <BestCategoryItems category={category} />
+      <CategoryItems category={category} />
+    </>
+  );
+}
+
 export default function ShopCategory({
   params,
 }: {
   params: { category: string };
 }) {
+  const cate = params.category;
   return (
     <Layout>
       <div className={styles.wrap}>
         {params.category}
-        {/* <SubNav />
+        <SubNav />
         <Suspense
           fallback={
             <div
@@ -36,9 +48,8 @@ export default function ShopCategory({
             </div>
           }
         >
-          <BestCategoryItems category={'top'} />
-          <CategoryItems category={'top'} />
-        </Suspense> */}
+          <Items category={cate} />
+        </Suspense>
       </div>
     </Layout>
   );
