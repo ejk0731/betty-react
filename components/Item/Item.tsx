@@ -5,27 +5,16 @@ import styles from './Item.module.scss';
 import Colors from './infos/Colors';
 import { IItemInfos } from '@/lib/types/item';
 
-// type Props = {
-//   data: IItemInfos[] | undefined;
-// };
-
 export default function Items({
-  itemNumber,
   itemCategory,
-  itemSlug,
   itemTitle,
   originalPrice,
   salePrice,
-  itemColors,
-  itemColorValues,
   imagePath,
 }: IItemInfos) {
   const setImagePath = `/images/${itemCategory}/${imagePath}`;
   return (
-    <Link
-      href={`/shop/${itemCategory}/${itemSlug}`}
-      className={styles.item_wrap}
-    >
+    <Link href={`/product`} className={styles.item_wrap}>
       <Image src={setImagePath} alt={itemTitle} width={200} height={400} />
       <Colors align="left" />
       <b className={styles.title}>{itemTitle}</b>

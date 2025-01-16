@@ -32,7 +32,7 @@ export default function SubNav() {
           return (
             <li key={index}>
               <Link
-                href={`/shop/${category.urlName}`}
+                href={`/category`}
                 scroll={false}
                 onClick={() => handleClickCategory(category.displayName)}
               >
