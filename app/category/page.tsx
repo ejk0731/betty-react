@@ -1,5 +1,5 @@
 import styles from './page.module.scss';
-import SubNav from '@/components/Header/SubNav';
+import SubNav from '@/components/Shop/SubNav';
 import { Suspense } from 'react';
 import Layout from '@/components/Layout/Layout';
 import { Metadata } from 'next';

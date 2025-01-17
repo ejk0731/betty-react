@@ -2,23 +2,9 @@
 import React, { useState } from 'react';
 import styles from './SubNav.module.scss';
 import Link from 'next/link';
+import { categories } from '@/lib/constants/category';
 
 export default function SubNav() {
-  const categories = [
-    {
-      displayName: 'New Arrivals',
-      urlName: 'new',
-    },
-    {
-      displayName: 'Outerwear',
-      urlName: 'outerwear',
-    },
-    {
-      displayName: 'Top',
-      urlName: 'top',
-    },
-  ];
-
   const [activeCategory, setActiveCategory] = useState<string>('New Arrivals');
   const handleClickCategory = (category: string) => {
     setActiveCategory(category);

@@ -11,10 +11,6 @@ export async function getFaq() {
   return db.prepare('SELECT * FROM faq').all();
 }
 
-// export function getSlug(slug: []) {
-//   return db.prepare('SELECT * FROM faq WHERE itemSlug = ?').get(slug);
-// }
-
 export async function saveFaq(faq: any) {
   faq.slug = slugify(faq.title, { lower: true });
   faq.instruction = xss(faq.summery);
@@ -39,6 +35,6 @@ export async function saveFaq(faq: any) {
       (name, email, title, summary, image) 
     VALUES 
       (@name, @email, @title, @summary, @image)
-    `
+    `,
   ).run(faq);
 }
