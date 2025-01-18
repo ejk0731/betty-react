@@ -1,10 +1,10 @@
 'use client';
 import React, { useState } from 'react';
-import styles from './SubNav.module.scss';
+import styles from './CategoryTab.module.scss';
 import Link from 'next/link';
 import { categories } from '@/lib/constants/category';
 
-export default function SubNav() {
+export default function CategoryTab() {
   const [activeCategory, setActiveCategory] = useState<string>('New Arrivals');
   const handleClickCategory = (category: string) => {
     setActiveCategory(category);
