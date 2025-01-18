@@ -4,7 +4,6 @@ import styles from './BestItemGrid.module.scss';
 
 export default function BestItemGrid({ items }: { items: any }) {
   // pc - max 4, mobile - max 3
-  // const item = [1, 2, 3, 4];
   // console.log(items);
   return (
     <div className={styles.wrap}>
@@ -15,9 +14,7 @@ export default function BestItemGrid({ items }: { items: any }) {
               <ItemWithHover
                 {...item}
                 showTopTitle
-                topTitleNumber={index}
-                // category={category}
-                // imageUrl={index + 2}
+                topTitleNumber={index + 1}
               />
             </li>
           );

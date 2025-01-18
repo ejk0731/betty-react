@@ -17,12 +17,9 @@ export default function ItemWithHover({
   showTopTitle = false,
   topTitleNumber,
   itemCategory,
-  itemSlug,
   itemTitle,
   originalPrice,
   salePrice,
-  itemColors,
-  itemColorValues,
   imagePath,
 }: IItemWithHoverProps) {
   const topTitle = `Best 0${topTitleNumber}.`;

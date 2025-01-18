@@ -1,13 +1,30 @@
+'use client';
 import Link from 'next/link';
 import styles from './Header.module.scss';
 import NavLink from './NavLink';
 import Cart from './Cart';
+import { useEffect, useState } from 'react';
+import { poppins400 } from '@/app/styles/fonts';
 
 export default function Header() {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const updateScroll = () => {
+    setScrollPosition(window.scrollY || document.documentElement.scrollTop);
+  };
+  useEffect(() => {
+    window.addEventListener('scroll', updateScroll);
+    return () => {
+      window.removeEventListener('scroll', updateScroll); //clean up
+    };
+    // console.log('header background');
+  }, [scrollPosition]);
+
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${scrollPosition > 80 && styles.is_active}`}
+    >
       <div className={styles.header_wrap}>
-        <div className={styles.header_left}>
+        <div className={styles.header_box}>
           <Link href={'/'} className={styles.logo}>
             <h1>Betty</h1>
           </Link>
@@ -16,17 +33,17 @@ export default function Header() {
               <li className={styles.main_nav_item}>
                 <NavLink href={'/shop'}>SHOP</NavLink>
 
-                <ul className={styles.sub_nav} style={{ display: 'none' }}>
+                <ul className={`${poppins400.className} ${styles.sub_nav}`}>
                   <li className={styles.sub_nav_item}>
-                    <button type="button">New Arrivals</button>
+                    <NavLink href={'/shop'}>New Arrivals</NavLink>
                   </li>
                   <li className={styles.sub_nav_item}>
-                    <button type="button">Outerwear</button>
+                    <NavLink href={'/category'}>Outerwear</NavLink>
                   </li>
                   <li className={styles.sub_nav_item}>
-                    <button type="button">Top</button>
+                    <NavLink href={'/category'}>Top</NavLink>
                   </li>
-                  <li className={styles.sub_nav_item}>
+                  {/* <li className={styles.sub_nav_item}>
                     <button type="button">Bottom</button>
                   </li>
                   <li className={styles.sub_nav_item}>
@@ -34,7 +51,7 @@ export default function Header() {
                   </li>
                   <li className={styles.sub_nav_item}>
                     <button type="button">Accessories</button>
-                  </li>
+                  </li> */}
                 </ul>
               </li>
               <li className={styles.main_nav_item}>
@@ -53,14 +70,14 @@ export default function Header() {
           </nav>
         </div>
 
-        <ul className={styles.sub_nav}>
-          <li className={styles.sub_nav_item}>
+        <ul className={styles.utility}>
+          <li className={styles.utility_item}>
             <button type="button">LOGIN</button>
           </li>
-          <li className={styles.sub_nav_item}>
+          <li className={styles.utility_item}>
             <button type="button">SEARCH</button>
           </li>
-          <li className={styles.sub_nav_item}>
+          <li className={styles.utility_item}>
             <button type="button">
               <Cart />
             </button>
