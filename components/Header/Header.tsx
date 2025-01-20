@@ -5,6 +5,7 @@ import NavLink from './NavLink';
 import Cart from './Cart';
 import { useEffect, useState } from 'react';
 import { poppins400 } from '@/app/styles/fonts';
+import BtnHamburger from './BtnHamburger';
 
 export default function Header() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -24,6 +25,7 @@ export default function Header() {
       className={`${styles.header} ${scrollPosition > 80 && styles.is_active}`}
     >
       <div className={styles.header_wrap}>
+        <BtnHamburger />
         <div className={styles.header_box}>
           <Link href={'/'} className={styles.logo}>
             <h1>Betty</h1>
