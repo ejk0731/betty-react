@@ -7,7 +7,7 @@ export default function Cart() {
   const cartNum = useRecoilValue(cartState);
   return (
     <span>
-      CART(<span>{cartNum}</span>)
+      (<span>{cartNum}</span>)
     </span>
   );
 }

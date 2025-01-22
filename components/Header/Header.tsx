@@ -2,16 +2,24 @@
 import Link from 'next/link';
 import styles from './Header.module.scss';
 import NavLink from './NavLink';
-import Cart from './Cart';
 import { useEffect, useState } from 'react';
 import { poppins400 } from '@/app/styles/fonts';
 import BtnHamburger from './BtnHamburger';
+import Utility from './Utility';
 
 export default function Header() {
+  const initialScreen = window.innerWidth;
   const [scrollPosition, setScrollPosition] = useState(0);
+  const [screenWidth, SetScreenWidth] = useState(initialScreen);
+
   const updateScroll = () => {
     setScrollPosition(window.scrollY || document.documentElement.scrollTop);
   };
+
+  const updateScreenWidth = () => {
+    SetScreenWidth(window.innerWidth);
+  };
+
   useEffect(() => {
     window.addEventListener('scroll', updateScroll);
     return () => {
@@ -20,17 +28,27 @@ export default function Header() {
     // console.log('header background');
   }, [scrollPosition]);
 
+  useEffect(() => {
+    window.addEventListener('resize', updateScreenWidth);
+    return () => {
+      window.removeEventListener('resize', updateScreenWidth); //clean up
+    };
+    console.log('header size');
+  }, [screenWidth]);
+
   return (
     <header
       className={`${styles.header} ${scrollPosition > 80 && styles.is_active}`}
     >
       <div className={styles.header_wrap}>
-        <BtnHamburger />
         <div className={styles.header_box}>
+          {screenWidth < 1024 && <BtnHamburger />}
+
           <Link href={'/'} className={styles.logo}>
             <h1>Betty</h1>
           </Link>
-          <nav>
+
+          <nav className={`${screenWidth < 1024 && styles.is_mobile}`}>
             <ul className={styles.main_nav}>
               <li className={styles.main_nav_item}>
                 <NavLink href={'/shop'}>SHOP</NavLink>
@@ -45,15 +63,6 @@ export default function Header() {
                   <li className={styles.sub_nav_item}>
                     <NavLink href={'/category'}>Top</NavLink>
                   </li>
-                  {/* <li className={styles.sub_nav_item}>
-                    <button type="button">Bottom</button>
-                  </li>
-                  <li className={styles.sub_nav_item}>
-                    <button type="button">Dress</button>
-                  </li>
-                  <li className={styles.sub_nav_item}>
-                    <button type="button">Accessories</button>
-                  </li> */}
                 </ul>
               </li>
               <li className={styles.main_nav_item}>
@@ -65,26 +74,11 @@ export default function Header() {
               <li className={styles.main_nav_item}>
                 <button type="button">COMMUNITY</button>
               </li>
-              {/* <li className={styles.main_nav_item}>
-              <button type="button">MY ACCOUNT</button>
-            </li> */}
             </ul>
           </nav>
         </div>
 
-        <ul className={styles.utility}>
-          <li className={styles.utility_item}>
-            <button type="button">LOGIN</button>
-          </li>
-          <li className={styles.utility_item}>
-            <button type="button">SEARCH</button>
-          </li>
-          <li className={styles.utility_item}>
-            <button type="button">
-              <Cart />
-            </button>
-          </li>
-        </ul>
+        <Utility isMobile={screenWidth < 1024} />
       </div>
     </header>
   );
