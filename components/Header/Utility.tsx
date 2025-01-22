@@ -9,19 +9,19 @@ export default function Utility({ isMobile = true }: { isMobile?: boolean }) {
       <li className={styles.utility_item}>
         {isMobile ? (
           <button type="button">
-            <Icon name="user" color="black" size={18}></Icon>
+            <Icon name="search" color="black" size={18}></Icon>
           </button>
         ) : (
-          <button type="button">LOGIN</button>
+          <button type="button">SEARCH</button>
         )}
       </li>
       <li className={styles.utility_item}>
         {isMobile ? (
           <button type="button">
-            <Icon name="search" color="black" size={18}></Icon>
+            <Icon name="user" color="black" size={18}></Icon>
           </button>
         ) : (
-          <button type="button">SEARCH</button>
+          <button type="button">LOGIN</button>
         )}
       </li>
       <li className={styles.utility_item}>
