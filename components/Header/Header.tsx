@@ -9,8 +9,9 @@ import Utility from './Utility';
 
 export default function Header() {
   const initialScreen = window.innerWidth;
-  const [scrollPosition, setScrollPosition] = useState(0);
-  const [screenWidth, SetScreenWidth] = useState(initialScreen);
+  const [scrollPosition, setScrollPosition] = useState<number>(0);
+  const [screenWidth, SetScreenWidth] = useState<number>(initialScreen);
+  const [mobileNavStatus, setMobileNavStatus] = useState<boolean>(false);
 
   const updateScroll = () => {
     setScrollPosition(window.scrollY || document.documentElement.scrollTop);
@@ -22,33 +23,40 @@ export default function Header() {
 
   useEffect(() => {
     window.addEventListener('scroll', updateScroll);
+    console.log('header background');
     return () => {
       window.removeEventListener('scroll', updateScroll); //clean up
     };
-    // console.log('header background');
   }, [scrollPosition]);
 
   useEffect(() => {
     window.addEventListener('resize', updateScreenWidth);
+    console.log('header resize');
     return () => {
       window.removeEventListener('resize', updateScreenWidth); //clean up
     };
-    console.log('header size');
   }, [screenWidth]);
 
   return (
     <header
-      className={`${styles.header} ${scrollPosition > 80 && styles.is_active}`}
+      className={`${styles.header} ${scrollPosition > 80 ? styles.is_active : null}`}
     >
       <div className={styles.header_wrap}>
         <div className={styles.header_box}>
-          {screenWidth < 1024 && <BtnHamburger />}
+          {screenWidth < 1024 && (
+            <BtnHamburger
+              mobileNavStatus={mobileNavStatus}
+              setMobileNavStatus={setMobileNavStatus}
+            />
+          )}
 
           <Link href={'/'} className={styles.logo}>
             <h1>Betty</h1>
           </Link>
 
-          <nav className={`${screenWidth < 1024 && styles.is_mobile}`}>
+          <nav
+            className={`${styles.nav} ${mobileNavStatus && styles.is_active}`}
+          >
             <ul className={styles.main_nav}>
               <li className={styles.main_nav_item}>
                 <NavLink href={'/shop'}>SHOP</NavLink>

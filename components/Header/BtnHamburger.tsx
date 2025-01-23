@@ -1,14 +1,18 @@
-'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import styles from './BtnHamburger.module.scss';
 
-export default function BtnHamburger() {
-  const [showCloseBtn, setShowCloseBtn] = useState<boolean>(false);
+export default function BtnHamburger({
+  mobileNavStatus,
+  setMobileNavStatus,
+}: {
+  mobileNavStatus: boolean;
+  setMobileNavStatus: (value: boolean) => void;
+}) {
   return (
     <button
       type="button"
-      className={`${styles.btn_hamburger} ${showCloseBtn && styles.btn_close}`}
-      onClick={() => setShowCloseBtn(!showCloseBtn)}
+      className={`${styles.btn_hamburger} ${mobileNavStatus && styles.btn_close}`}
+      onClick={() => setMobileNavStatus(!mobileNavStatus)}
     >
       <span className={styles.line}></span>
       <span className={styles.line}></span>
