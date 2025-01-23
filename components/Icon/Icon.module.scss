@@ -1,0 +1,33 @@
+@import '../../app/styles/common/color';
+
+.icon {
+  path {
+    vector-effect: non-scaling-stroke;
+  }
+
+  @each $name, $color in $colors {
+    &.color-#{$name} {
+      &.line {
+        path,
+        circle {
+          stroke: $color;
+        }
+
+        rect {
+          fill: $color;
+        }
+      }
+
+      &.solid {
+        path {
+          stroke: $color;
+          fill: $color;
+        }
+
+        rect {
+          fill: $color;
+        }
+      }
+    }
+  }
+}

@@ -1,7 +1,8 @@
 .wrap {
   position: relative;
-  padding: 150px 200px;
+  padding: 8vw 14vw;
   background: rgb(225, 218, 207);
+  overflow: hidden;
 }
 
 .item_wrap {
@@ -24,13 +25,13 @@
 .title {
   position: absolute;
   top: 50%;
-  left: 40px;
-  transform: translateY(-50%) rotateZ(-90deg);
+  left: 2vw;
   font-size: 30px;
+  transform: translateY(-50%) rotateZ(-90deg);
 
   &.right {
+    right: 2vw;
     left: auto;
-    right: 40px;
     transform: translateY(-50%) rotateZ(90deg);
   }
 }

@@ -1,7 +1,11 @@
 import React from 'react';
-import Header from '@/components/Header/Header';
 import styles from './Layout.module.scss';
 import Footer from '../Footer/Footer';
+import dynamic from 'next/dynamic';
+
+const ResizeScrollHeader = dynamic(() => import('@/components/Header/Header'), {
+  ssr: false,
+});
 
 export default function Layout({
   children,
@@ -10,7 +14,7 @@ export default function Layout({
 }>) {
   return (
     <div>
-      <Header />
+      <ResizeScrollHeader />
       <main className={styles.main}>{children}</main>
       <Footer />
     </div>

@@ -11,18 +11,9 @@ export default function NavLink({
   href: string;
   children: React.ReactNode;
 }) {
-  const path = usePathname();
   return (
     <>
-      <Link
-        href={href}
-        scroll={false}
-        className={
-          path.startsWith(href)
-            ? `${styles.link} ${styles.active}`
-            : styles.link
-        }
-      >
+      <Link href={href} scroll={false} className={styles.link}>
         {children}
       </Link>
     </>
