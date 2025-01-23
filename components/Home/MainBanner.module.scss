@@ -15,6 +15,10 @@
 
   img {
     height: 100%;
+
+    &.mobile_banner {
+      display: none;
+    }
   }
 }
 
@@ -25,6 +29,7 @@
   color: white;
   font-weight: 300;
   font-size: 50px;
+  white-space: nowrap;
   animation: ani_main_banner_txt 0.5s linear 1s forwards;
   transform: translate(-40%, -50%);
   opacity: 0;
@@ -42,5 +47,31 @@
   100% {
     opacity: 100%;
     transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .main_banner_wrap {
+    height: 700px !important;
+  }
+
+  .main_banner {
+    width: auto !important;
+    height: auto !important;
+    text-align: center;
+
+    img {
+      &.mobile_banner {
+        display: inline-block !important;
+      }
+
+      &.pc_banner {
+        display: none !important;
+      }
+    }
+  }
+
+  .main_banner_txt {
+    font-size: 30px !important;
   }
 }
