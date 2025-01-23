@@ -14,6 +14,7 @@ export default function Collection() {
           alt=""
           priority
           quality={70}
+          className={styles.img_main}
         />
         <div className={styles.sub_wrap}>
           <div className={styles.title_wrap}>
@@ -24,14 +25,15 @@ export default function Collection() {
               Collection
             </h4>
             <Image
-              className={styles.sub_img}
+              className={styles.img_sub}
               src={imageCollection2}
               height={320}
               alt=""
+              priority
               quality={70}
             />
           </div>
-          <p>
+          <p className={styles.desc}>
             Whether your style if minimal and timeless, or you love to following
             the latest trends, in our collection you will the earrings,
             necklaces, bracelets, rings and even hair accessories to accompany
