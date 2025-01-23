@@ -35,3 +35,31 @@
     transform: translateY(-50%) rotateZ(90deg);
   }
 }
+
+@media screen and (max-width: 720px) {
+  .wrap {
+    padding: 8vw 0 0;
+    text-align: center;
+  }
+
+  .item {
+    width: calc(100% / 2) !important;
+    margin: 0 !important;
+
+    &:last-child {
+      display: none;
+    }
+  }
+
+  .title {
+    display: inline-block;
+    position: static !important;
+    padding-bottom: 10px;
+    font-size: 23px !important;
+    transform: none !important;
+
+    &.right {
+      display: none;
+    }
+  }
+}
