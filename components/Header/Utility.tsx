@@ -3,7 +3,7 @@ import styles from './Utility.module.scss';
 import Cart from './Cart';
 import Icon from '../Icon';
 
-export default function Utility({ isMobile = true }: { isMobile?: boolean }) {
+export default function Utility() {
   return (
     <ul className={styles.utility}>
       <li className={styles.utility_item}>

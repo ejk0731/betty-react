@@ -23,7 +23,7 @@ export default function Header() {
 
   useEffect(() => {
     window.addEventListener('scroll', updateScroll);
-    console.log('header background');
+    // console.log('header background');
     return () => {
       window.removeEventListener('scroll', updateScroll); //clean up
     };
@@ -31,7 +31,7 @@ export default function Header() {
 
   useEffect(() => {
     window.addEventListener('resize', updateScreenWidth);
-    console.log('header resize');
+    // console.log('header resize');
     return () => {
       window.removeEventListener('resize', updateScreenWidth); //clean up
     };
@@ -86,7 +86,7 @@ export default function Header() {
           </nav>
         </div>
 
-        <Utility isMobile={screenWidth < 1024} />
+        <Utility />
       </div>
     </header>
   );
