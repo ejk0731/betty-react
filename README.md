@@ -1,4 +1,4 @@
-This is an E-Commerce website project built with React, Typescript, Next.js, and deployed with Vercel.
+This is an E-Commerce website project built with React, Typescript, Next.js, and deployed by Vercel.
 
 
 ## Getting Started
