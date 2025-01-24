@@ -1,5 +1,13 @@
+@import '@/app/styles/common/color';
+
 .wrap {
-  padding-top: 160px;
-  background: #f4f1ed;
+  padding-top: 130px;
   font-size: 15px;
+  @include color(background-color, bgBeige);
+}
+
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding-top: 120px;
+  }
 }

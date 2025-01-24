@@ -11,7 +11,7 @@ export default function CategoryTab() {
   };
 
   return (
-    <div className={styles.sub_nav}>
+    <div className={styles.tab_category}>
       <b>{activeCategory}</b>
       <ul>
         {categories.map((category, index) => {

@@ -1,4 +1,4 @@
-.sub_nav {
+.tab_category {
   display: flex;
   width: 80%;
   margin: 0 auto;
@@ -6,11 +6,11 @@
   b {
     display: inline-block;
     padding-right: 20px;
-    margin-right: 10px;
     box-sizing: border-box;
     border-right: 2px solid;
     font-weight: 500;
     font-size: 15px;
+    white-space: nowrap;
   }
 
   ul {
@@ -24,6 +24,7 @@
     a {
       color: #a19388;
       font-size: 13px;
+      white-space: nowrap;
     }
   }
 }
