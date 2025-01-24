@@ -1,6 +1,6 @@
 .wrap {
   position: relative;
-  padding: 70px 100px 40px;
+  padding: 70px 80px 40px;
 
   &::before {
     display: block;
@@ -22,9 +22,33 @@
 }
 
 .item {
-  width: calc((100% - (40px * 2) - (15px * 2) / 3));
+  width: calc(100% / 4);
   font-size: 0;
   &:not(:first-child) {
     margin-left: 15px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .wrap {
+    padding: 50px 50px 40px;
+  }
+  .item {
+    width: calc(100% / 3);
+    &:last-child {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .wrap {
+    padding: 40px 20px 30px;
+  }
+  .item {
+    width: calc(100% / 3);
+    &:last-child {
+      display: none;
+    }
   }
 }

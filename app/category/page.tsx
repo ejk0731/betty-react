@@ -1,4 +1,4 @@
-import styles from './page.module.scss';
+import styles from '../shop/page.module.scss';
 import SubNav from '@/components/Shop/CategoryTab';
 import { Suspense } from 'react';
 import Layout from '@/components/Layout/Layout';

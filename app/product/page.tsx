@@ -41,25 +41,24 @@ export default function Category() {
     notFound();
   }
 
-  const setImagePath = `${ITEM_IMAGE_PATH}${item.itemCategory}/${item.imagePath}`;
-
+  // const setImagePath = `${ITEM_IMAGE_PATH}${item.itemCategory}/${item.imagePath}`;
+  const itemImages = [1, 2, 3, 4, 5, 6];
   return (
     <Layout>
       <div className={styles.background_wrap}>
         <div className={styles.wrap}>
           <div className={styles.image_wrap}>
-            <div className={styles.img_box}>
-              <Image src={setImagePath} fill alt={item.itemTitle} />
-            </div>
-            <div className={styles.img_box}>
-              <Image src={setImagePath} fill alt={item.itemTitle} />
-            </div>
-            <div className={styles.img_box}>
-              <Image src={setImagePath} fill alt={item.itemTitle} />
-            </div>
-            <div className={styles.img_box}>
-              <Image src={setImagePath} fill alt={item.itemTitle} />
-            </div>
+            {itemImages.map(index => {
+              return (
+                <div className={styles.img_box}>
+                  <Image
+                    src={`${ITEM_IMAGE_PATH}${item.itemCategory}/${index + 1}.jpg`}
+                    fill
+                    alt={item.itemTitle}
+                  />
+                </div>
+              );
+            })}
           </div>
           <div className={styles.info_wrap}>
             <div className={styles.breadcrumb}>

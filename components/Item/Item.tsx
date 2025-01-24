@@ -16,12 +16,14 @@ export default function Items({
   return (
     <Link href={`/product`} className={styles.item_wrap}>
       <Image src={setImagePath} alt={itemTitle} width={200} height={400} />
-      <Colors align="left" />
-      <b className={styles.title}>{itemTitle}</b>
-      <s className={`${styles.price} ${styles.original_price}`}>
-        KRW {originalPrice}
-      </s>
-      <span className={styles.price}>KRW {salePrice}</span>
+      <div className={styles.info_wrap}>
+        <Colors align="left" />
+        <b className={styles.title}>{itemTitle}</b>
+        <s className={`${styles.price} ${styles.original_price}`}>
+          KRW {originalPrice}
+        </s>
+        <span className={styles.price}>KRW {salePrice}</span>
+      </div>
     </Link>
   );
 }

@@ -59,17 +59,37 @@ export default function Header() {
           >
             <ul className={styles.main_nav}>
               <li className={styles.main_nav_item}>
-                <NavLink href={'/shop'}>SHOP</NavLink>
+                <NavLink
+                  href={'/shop'}
+                  onClick={() => setMobileNavStatus(false)}
+                >
+                  SHOP
+                </NavLink>
 
                 <ul className={`${poppins400.className} ${styles.sub_nav}`}>
                   <li className={styles.sub_nav_item}>
-                    <NavLink href={'/shop'}>New Arrivals</NavLink>
+                    <NavLink
+                      href={'/shop'}
+                      onClick={() => setMobileNavStatus(false)}
+                    >
+                      New Arrivals
+                    </NavLink>
                   </li>
                   <li className={styles.sub_nav_item}>
-                    <NavLink href={'/category'}>Outerwear</NavLink>
+                    <NavLink
+                      href={'/category'}
+                      onClick={() => setMobileNavStatus(false)}
+                    >
+                      Outerwear
+                    </NavLink>
                   </li>
                   <li className={styles.sub_nav_item}>
-                    <NavLink href={'/category'}>Top</NavLink>
+                    <NavLink
+                      href={'/category'}
+                      onClick={() => setMobileNavStatus(false)}
+                    >
+                      Top
+                    </NavLink>
                   </li>
                 </ul>
               </li>
