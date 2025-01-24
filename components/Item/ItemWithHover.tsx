@@ -27,7 +27,7 @@ export default function ItemWithHover({
   return (
     <Link href={`/product`} scroll={false} className={styles.item}>
       {showTopTitle && <b className={styles.num}>{topTitle}</b>}
-      <Image src={setImagePath} alt="" fill objectFit="cover" />
+      <Image src={setImagePath} alt="" fill priority objectFit="cover" />
       <div className={styles.info_wrap}>
         <Colors align="center" />
         <span className={styles.title}>{itemTitle}</span>
