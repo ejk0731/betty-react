@@ -21,6 +21,15 @@ export default function Header() {
     SetScreenWidth(window.innerWidth);
   };
 
+  const handleClickNav = () => {
+    setMobileNavStatus(false);
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+    console.log('top');
+  };
+
   useEffect(() => {
     window.addEventListener('scroll', updateScroll);
     // console.log('header background');
@@ -59,35 +68,23 @@ export default function Header() {
           >
             <ul className={styles.main_nav}>
               <li className={styles.main_nav_item}>
-                <NavLink
-                  href={'/shop'}
-                  onClick={() => setMobileNavStatus(false)}
-                >
+                <NavLink href={'/shop'} onClick={handleClickNav}>
                   SHOP
                 </NavLink>
 
                 <ul className={`${poppins400.className} ${styles.sub_nav}`}>
                   <li className={styles.sub_nav_item}>
-                    <NavLink
-                      href={'/shop'}
-                      onClick={() => setMobileNavStatus(false)}
-                    >
+                    <NavLink href={'/shop'} onClick={handleClickNav}>
                       New Arrivals
                     </NavLink>
                   </li>
                   <li className={styles.sub_nav_item}>
-                    <NavLink
-                      href={'/category'}
-                      onClick={() => setMobileNavStatus(false)}
-                    >
+                    <NavLink href={'/category'} onClick={handleClickNav}>
                       Outerwear
                     </NavLink>
                   </li>
                   <li className={styles.sub_nav_item}>
-                    <NavLink
-                      href={'/category'}
-                      onClick={() => setMobileNavStatus(false)}
-                    >
+                    <NavLink href={'/category'} onClick={handleClickNav}>
                       Top
                     </NavLink>
                   </li>
