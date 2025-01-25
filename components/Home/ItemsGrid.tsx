@@ -16,7 +16,12 @@ export default function ItemsGrid({
         {items.slice(0, 9).map((item: any, index: number) => {
           return (
             <li key={item.id} className={styles.item}>
-              <ItemWithHover {...item} category="new" imageUrl={index + 1} />
+              <ItemWithHover
+                {...item}
+                category="new"
+                imageUrl={index + 1}
+                isHome
+              />
             </li>
           );
         })}

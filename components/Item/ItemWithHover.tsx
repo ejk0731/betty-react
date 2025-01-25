@@ -7,6 +7,7 @@ import { ITEM_IMAGE_PATH } from '@/lib/constants/url';
 import { IItemInfos } from '@/lib/types/item';
 
 interface IItemWithHoverProps extends IItemInfos {
+  isHome?: boolean;
   showTopTitle?: boolean;
   topTitleNumber?: number;
   category?: string;
@@ -14,6 +15,7 @@ interface IItemWithHoverProps extends IItemInfos {
 }
 
 export default function ItemWithHover({
+  isHome = false,
   showTopTitle = false,
   topTitleNumber,
   itemCategory,
@@ -27,7 +29,7 @@ export default function ItemWithHover({
   return (
     <Link href={`/product`} scroll={false} className={styles.item}>
       {showTopTitle && <b className={styles.num}>{topTitle}</b>}
-      <Image src={setImagePath} alt="" fill priority objectFit="cover" />
+      <Image src={setImagePath} alt="" fill priority={isHome} />
       <div className={styles.info_wrap}>
         <Colors align="center" />
         <span className={styles.title}>{itemTitle}</span>
