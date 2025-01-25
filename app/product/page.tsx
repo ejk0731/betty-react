@@ -50,7 +50,7 @@ export default function Category() {
           <div className={styles.image_wrap}>
             {itemImages.map(index => {
               return (
-                <div className={styles.img_box}>
+                <div className={styles.img_box} key={index}>
                   <Image
                     src={`${ITEM_IMAGE_PATH}${item.itemCategory}/${index + 1}.jpg`}
                     fill
