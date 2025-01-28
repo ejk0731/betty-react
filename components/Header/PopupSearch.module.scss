@@ -1,0 +1,61 @@
+@import '@/app/styles/common/color';
+
+.wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 20px;
+
+  @include color(background-color, white);
+}
+
+.input_wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+  align-content: center;
+}
+
+.input_txt {
+  max-width: 500px;
+  min-width: 280px;
+  height: 35px;
+  padding: 5px;
+  border: none;
+  font-size: 16px;
+  border-bottom: 1px solid;
+
+  @include color(border-color, gray80);
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.btn_close,
+.btn_search {
+  padding: 5px;
+  font-size: 0;
+}
+
+.btn_search {
+  margin-left: 10px;
+}
+
+.keywords_wrap {
+  margin-top: 15px;
+  button {
+    padding: 3px 5px;
+    border: 1px solid;
+    @include color(border-color, gray80);
+
+    // &:not(:first-child) {
+    //   margin-left: 10px;
+    // }
+  }
+
+  :global(.swiper-wrapper) {
+    display: flex;
+  }
+}
