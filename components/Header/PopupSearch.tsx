@@ -1,12 +1,17 @@
+'use client';
 import React from 'react';
 import styles from './PopupSearch.module.scss';
 import Icon from '../Icon';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-export default function PopupSearch() {
+export default function PopupSearch({
+  onClick,
+}: {
+  onClick: (e: React.MouseEvent) => void;
+}) {
   return (
     <div className={styles.wrap}>
-      <button type="button" className={styles.btn_close}>
+      <button type="button" className={styles.btn_close} onClick={onClick}>
         <Icon name="close" size={18} />
       </button>
       <div className={styles.input_wrap}>

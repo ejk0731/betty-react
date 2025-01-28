@@ -6,6 +6,7 @@
   left: 0;
   width: 100%;
   padding: 20px 20px;
+  text-align: center;
 
   @include color(background-color, white);
 }
@@ -49,10 +50,6 @@
     padding: 3px 5px;
     border: 1px solid;
     @include color(border-color, gray80);
-
-    // &:not(:first-child) {
-    //   margin-left: 10px;
-    // }
   }
 
   :global(.swiper-wrapper) {
